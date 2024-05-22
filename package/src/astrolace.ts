@@ -1,7 +1,7 @@
 import { addDts, addVirtualImports, createResolver, defineIntegration } from "astro-integration-kit";
 import { integrationLogger } from "./utils";
 import { optionsSchema, } from "./schemas";
-import { componentFile, componentHeaderFile } from "./stubs";
+import { componentFile, componentHeaderFile, typesFile, toolsFile } from "./stubs";
 
 export default defineIntegration({
 	name: "@matthiesenxyz/astrolace",
@@ -30,6 +30,8 @@ export default defineIntegration({
 						imports: {
 							'astrolace:components': `export * from '${resolve('./components/index.ts')}';`,
 							'astrolace:components/header': `export * from '${resolve('./components/header/index.ts')}';`,
+							'astrolace:types': `export * from '${resolve('./types/index.ts')}';`,
+							'astrolace:utils': `export * from '${resolve('./tools/index.ts')}';`,
 						}
 					})
 
@@ -42,6 +44,16 @@ export default defineIntegration({
 					addDts(params, {
 						name: 'astrolace-components',
 						content: componentFile
+					})
+
+					addDts(params, {
+						name: 'astrolace-types',
+						content: typesFile
+					})
+
+					addDts(params, {
+						name: 'astrolace-tools',
+						content: toolsFile
 					})
 				},
 			},

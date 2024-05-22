@@ -1,4 +1,6 @@
 /// <reference types="astro/client" />
+/// <reference types="../.astro/astrolace-tools.d.ts" />
+/// <reference types="../.astro/astrolace-types.d.ts" />
 /// <reference types="../.astro/astrolace-components.d.ts" />
 /// <reference types="../.astro/astrolace-components-header.d.ts" />
 /// <reference types="../.astro/astro-mcserverstatus-components.d.ts" />

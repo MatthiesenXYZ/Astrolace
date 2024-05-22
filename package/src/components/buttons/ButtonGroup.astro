@@ -1,6 +1,7 @@
 ---
+import type { HTMLAttributes } from 'astro/types';
 
-type Props = {
+interface Props extends Partial<HTMLAttributes<'div'>> {
     label?: string;
 }
 
