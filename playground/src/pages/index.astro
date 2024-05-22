@@ -1,0 +1,59 @@
+---
+import { ShoelaceHeader } from "astrolace:components/header";
+import { Icon, IconButton, Tooltip, Button, ButtonGroup, Alert } from "astrolace:components";
+
+---
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>Playground Testing</title>
+		<ShoelaceHeader />
+	</head>
+	<body>
+		<h1> Playground Testing </h1>
+
+		<div>
+			<h2>Icon</h2>
+			<Icon name="fan" label="test"  />
+		</div>
+
+		<div>
+			<h2>Icon Button</h2>
+			<IconButton name="google" href="https://google.com" target="_blank" />
+		</div>
+
+		<div>
+			<h2>Tooltip</h2>
+			<Tooltip placement="top-start">
+				<div slot="content">Hello!</div>
+				<div>tested</div>
+			</Tooltip>
+		</div>
+
+		<div>
+			<h2>Button</h2>
+			<Button variant="default" size="medium">
+				<Icon name="gear" slot="prefix" />
+				<span>Hello!</span>
+			</Button>
+		</div>
+
+		<div>
+			<h2>Button Group</h2>
+			<ButtonGroup>
+				<Button variant="default" size="medium">Hello!</Button>
+				<Button variant="default" size="medium">Hello!</Button>
+				<Button variant="default" size="medium">Hello!</Button>
+			</ButtonGroup>
+		</div>
+
+		<div class="sl-theme-dark">
+			<h2>Alert</h2>
+			<Alert variant="success" open>
+				<Icon name="info-circle" slot="icon" />
+				Hello!
+			</Alert>
+		</div>
+
+</html>

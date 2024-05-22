@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends Partial<HTMLAttributes<'div'>> {
+    variant?: 'primary' | 'success' | 'neutral' | 'warning' | 'danger';
+    open?: boolean;
+    closable?: boolean;
+    duration?: number;
+}
+
+const { variant, open, closable, duration, ...rest } = Astro.props;
+---
+
+<sl-alert {variant} {open} {closable} {duration} {...rest}>
+    <div slot="icon"><slot name="icon" /></div>
+    <slot></slot>
+</sl-alert>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/alert/alert.js';
+</script>

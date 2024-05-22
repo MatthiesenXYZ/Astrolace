@@ -1,0 +1,24 @@
+---
+import type { SlIcon } from '@shoelace-style/shoelace';
+
+interface Props extends Partial<SlIcon> {
+    name?: string;
+    src?: string;
+    label?: string;
+}
+
+const { name, src, label, ...rest } = Astro.props;
+
+---
+
+<sl-icon 
+    {name} 
+    {src} 
+    {label} 
+    {...rest} 
+    >
+</sl-icon>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/icon/icon.js';
+</script>

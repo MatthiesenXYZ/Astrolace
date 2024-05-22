@@ -1,0 +1,16 @@
+---
+
+type Props = {
+    label?: string;
+}
+
+const { label, ...rest } = Astro.props;
+---
+
+<sl-button-group {label} {...rest}>
+    <slot />
+</sl-button-group>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/button-group/button-group.js';
+</script>

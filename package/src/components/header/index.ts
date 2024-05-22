@@ -1,0 +1,1 @@
+export { default as ShoelaceHeader } from './ShoelaceHeader.astro';

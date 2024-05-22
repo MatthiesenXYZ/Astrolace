@@ -1,0 +1,38 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends Partial<HTMLAttributes<'div'>> {
+    placement?: 'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end';
+    disabled?: boolean;
+    distance?: number;
+    open?: boolean;
+    skidding?: number;
+    trigger?: 'hover' | 'click' | 'focus' | 'manual';
+    hoist?: boolean;
+} 
+
+const { placement, disabled, distance, open, skidding, trigger, hoist, ...rest } = Astro.props;
+
+
+---
+
+<sl-tooltip 
+    {placement} 
+    {disabled} 
+    {distance} 
+    {open} 
+    {skidding}
+    {trigger}
+    {hoist}
+    {...rest}
+    >
+        <div slot="content">
+            <slot name="content" />
+        </div> 
+    <slot />
+</sl-tooltip>
+
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/tooltip/tooltip.js';
+</script>

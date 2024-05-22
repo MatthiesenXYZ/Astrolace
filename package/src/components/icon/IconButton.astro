@@ -1,0 +1,31 @@
+---
+import type { SlIconButton } from '@shoelace-style/shoelace';
+
+interface Props extends Partial<SlIconButton> {
+    name?: string;
+    src?: string;
+    href?: string;
+    target?: "_blank" | "_self" | "_parent" | "_top";
+    download?: string;
+    label?: string;
+    disabled?: boolean;
+}
+
+const { name, src, href, target, download, label, disabled, ...rest } = Astro.props;
+---
+
+<sl-icon-button 
+    {name} 
+    {src} 
+    {href} 
+    {target} 
+    {download} 
+    {label} 
+    {disabled} 
+    {...rest}
+    >
+</sl-icon-button>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/icon-button/icon-button.js';
+</script>
