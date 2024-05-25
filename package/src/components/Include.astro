@@ -1,0 +1,27 @@
+---
+import type { SlInclude } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlInclude, any> {
+    /**
+     * The location of the HTML file to include. Be sure you trust the content you are including as it will be executed as
+     * code and can result in XSS attacks.
+     */
+    src: string;
+    /** The fetch mode to use. */
+    mode?: 'cors' | 'no-cors' | 'same-origin';
+    /**
+     * Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as
+     * code and can result in XSS attacks.
+     */
+    allowScripts?: boolean;
+}
+
+const { src, mode, allowScripts, ...rest } = Astro.props;
+---
+
+<sl-include src={src} {mode} {allowScripts} {...rest}>
+</sl-include>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/include/include.js';
+</script>

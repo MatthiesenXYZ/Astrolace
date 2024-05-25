@@ -1,0 +1,27 @@
+---
+import type { SlDetails } from '@shoelace-style/shoelace'
+
+
+interface Props extends Omit<SlDetails, any>{
+    /**
+     * Indicates whether or not the details is open. You can toggle this attribute to show and hide the details, or you
+     * can use the `show()` and `hide()` methods and this attribute will reflect the details' open state.
+     */
+    open?: boolean;
+    /** The summary to show in the header. If you need to display HTML, use the `summary` slot instead. */
+    summary?: string;
+    /** Disables the details so it can't be toggled. */
+    disabled?: boolean;
+}
+
+const { open, disabled, summary, ...rest } = Astro.props;
+
+---
+
+<sl-details {open} {disabled} {summary} {...rest}>
+    <slot />
+</sl-details>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/details/details.js';
+</script>

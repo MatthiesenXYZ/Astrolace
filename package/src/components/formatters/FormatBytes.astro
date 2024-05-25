@@ -1,0 +1,23 @@
+---
+import type { SlFormatBytes } from 'astrolace:types';
+
+interface Props extends Omit<SlFormatBytes, any> {
+    /** The number to format in bytes. */
+    value?: number;
+    /** The type of unit to display. */
+    unit?: 'byte' | 'bit';
+    /** Determines how to display the result, e.g. "100 bytes", "100 b", or "100b". */
+    display?: 'long' | 'short' | 'narrow';
+    /** @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/lang */
+    lang?: string;
+}
+
+const { display, unit, value, lang, ...rest } = Astro.props;
+---
+
+<sl-format-bytes {display} {unit} {value} {lang} {...rest}>
+</sl-format-bytes> 
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/format-bytes/format-bytes.js';
+</script>

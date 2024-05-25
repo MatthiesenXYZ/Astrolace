@@ -3,7 +3,9 @@ import { ShoelaceHeader } from "astrolace:components/header";
 import { 
 	Alert, AnimatedImage, Avatar,
 	Badge, Breadcrumb, BreadcrumbItem, ButtonGroup, Button,
-	Card, Checkbox, ColorPicker, CopyButton,
+	Card, Carousel, CarouselItem, Checkbox, ColorPicker, CopyButton,
+	Details, Divider,
+	FormatBytes, FormatDate, FormatNumber,
 	Icon, IconButton, 
 	Tooltip 
 } from "astrolace:components";
@@ -24,10 +26,14 @@ import {
 			<Icon name="fan" label="test"  />
 		</div>
 
+		<Divider />
+
 		<div>
 			<h2>Icon Button</h2>
 			<IconButton name="google" href="https://google.com" target="_blank" />
 		</div>
+
+		<Divider />
 
 		<div>
 			<h2>Tooltip</h2>
@@ -37,6 +43,8 @@ import {
 			</Tooltip>
 		</div>
 
+		<Divider />
+
 		<div>
 			<h2>Button</h2>
 			<Button variant="default" size="medium">
@@ -44,6 +52,8 @@ import {
 				<span>Hello!</span>
 			</Button>
 		</div>
+
+		<Divider />
 
 		<div>
 			<h2>Button Group (with a badge!)</h2>
@@ -56,6 +66,8 @@ import {
 			</ButtonGroup>
 		</div>
 
+		<Divider />
+
 		<div class="sl-theme-dark">
 			<h2>Alert</h2>
 			<Alert variant="success" open>
@@ -64,15 +76,21 @@ import {
 			</Alert>
 		</div>
 
+		<Divider />
+
 		<div>
 			<h2>Animated Image</h2>
 			<AnimatedImage src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2hkN28zd2p5bHgwbWZxYWM3eGN5NHIyNGVqMmFmdWRlbjhlb28ydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AAqUzS8UUiUlTBXIzH/giphy.gif" alt="A test gif" />
 		</div>
 
+		<Divider />
+
 		<div>
 			<h2>Avatar</h2>
 			<Avatar image="https://avatars.githubusercontent.com/u/30383579?v=4" />
 		</div>
+
+		<Divider />
 
 		<div>
 			<h2>Breadcrumb</h2>
@@ -83,12 +101,33 @@ import {
 			</Breadcrumb>
 		</div>
 
+		<Divider />
+
 		<div>
 			<h2>Card</h2>
 			<Card>
 				Hello!
 			</Card>
 		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Carousel</h2>
+			<Carousel pagination navigation mouse-dragging loop>
+				<CarouselItem>
+					<img src="https://plus.unsplash.com/premium_photo-1670161434578-c6cd301d4067?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+				</CarouselItem>
+				<CarouselItem>
+					<img src="https://images.unsplash.com/photo-1676548363806-d3a57b200082?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> 
+				</CarouselItem>
+				<CarouselItem>
+					<img src="https://images.unsplash.com/photo-1715867155623-847902b1bbbe?q=80&w=2777&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+				</CarouselItem>
+			</Carousel>
+		</div>
+
+		<Divider />
 
 		<div class="sl-theme-dark">
 			<h2>Checkbox</h2>
@@ -97,13 +136,45 @@ import {
 			</Checkbox>
 		</div>
 
+		<Divider />
+
 		<div>
 			<h2>Color Picker</h2>
 			<ColorPicker value="#ff0000" />
 		</div>
 
+		<Divider />
+
 		<div>
 			<h2>Copy Button</h2>
 			<CopyButton value="Hello!" />
 		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Details</h2>
+			<Details summary="Hello!">
+				<p>Test</p>
+			</Details>
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Formatters</h2>
+
+			<h3>Format Bytes</h3>
+			<FormatBytes value={1024} />
+
+			<h3>Format Date</h3>
+			<FormatDate date="2021-01-01" />
+
+			<h3>Format Number</h3>
+			<FormatNumber value={1000} />
+		</div>
+
+		<Divider />
+
+	</body>
 </html>

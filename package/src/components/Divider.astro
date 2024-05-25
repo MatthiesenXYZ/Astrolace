@@ -1,0 +1,17 @@
+---
+import type { SlDivider } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlDivider, any>{
+    /** Draws the divider in a vertical orientation. */
+    vertical?: boolean;
+}
+
+const { vertical, ...rest } = Astro.props;
+
+---
+
+<sl-divider {vertical} {...rest}></sl-divider>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/divider/divider.js';
+</script>
