@@ -2,6 +2,10 @@
 import type { SlBreadcrumb } from '@shoelace-style/shoelace';
 
 interface Props extends Omit<SlBreadcrumb, any>{
+    /**
+     * The label to use for the breadcrumb control. This will not be shown on the screen, but it will be announced by
+     * screen readers and other assistive devices to provide more context for users.
+     */
     label?: string;
     separator?: string;
 }

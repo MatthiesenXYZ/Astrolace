@@ -1,6 +1,12 @@
 ---
 import { ShoelaceHeader } from "astrolace:components/header";
-import { Icon, IconButton, Tooltip, Button, ButtonGroup, Alert, AnimatedImage, Avatar, Badge, Breadcrumb, BreadcrumbItem, Card } from "astrolace:components";
+import { 
+	Alert, AnimatedImage, Avatar,
+	Badge, Breadcrumb, BreadcrumbItem, ButtonGroup, Button,
+	Card, Checkbox, ColorPicker, CopyButton,
+	Icon, IconButton, 
+	Tooltip 
+} from "astrolace:components";
 
 ---
 <html>
@@ -82,5 +88,22 @@ import { Icon, IconButton, Tooltip, Button, ButtonGroup, Alert, AnimatedImage, A
 			<Card>
 				Hello!
 			</Card>
+		</div>
+
+		<div class="sl-theme-dark">
+			<h2>Checkbox</h2>
+			<Checkbox>
+				Test Checkbox!
+			</Checkbox>
+		</div>
+
+		<div>
+			<h2>Color Picker</h2>
+			<ColorPicker value="#ff0000" />
+		</div>
+
+		<div>
+			<h2>Copy Button</h2>
+			<CopyButton value="Hello!" />
 		</div>
 </html>

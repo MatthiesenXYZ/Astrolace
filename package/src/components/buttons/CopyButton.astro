@@ -1,0 +1,55 @@
+---
+import type { SlCopyButton } from '@shoelace-style/shoelace'
+
+interface Props extends Omit<SlCopyButton, any>{
+    /** The text value to copy. */
+    value?: string;
+    /**
+     * An id that references an element in the same document from which data will be copied. If both this and `value` are
+     * present, this value will take precedence. By default, the target element's `textContent` will be copied. To copy an
+     * attribute, append the attribute name wrapped in square brackets, e.g. `from="el[value]"`. To copy a property,
+     * append a dot and the property name, e.g. `from="el.value"`.
+     */
+    from?: string;
+    /** Disables the copy button. */
+    disabled?: boolean;
+    /** A custom label to show in the tooltip. */
+    copyLabel?: string;
+    /** A custom label to show in the tooltip after copying. */
+    successLabel?: string;
+    /** A custom label to show in the tooltip when a copy error occurs. */
+    errorLabel?: string;
+    /** The length of time to show feedback before restoring the default trigger. */
+    feedbackDuration?: number;
+    /** The preferred placement of the tooltip. */
+    tooltipPlacement?: 'top' | 'right' | 'bottom' | 'left';
+    /**
+     * Enable this option to prevent the tooltip from being clipped when the component is placed inside a container with
+     * `overflow: auto|hidden|scroll`. Hoisting uses a fixed positioning strategy that works in many, but not all,
+     * scenarios.
+     */
+    hoist?: boolean;
+}
+
+const { copyLabel, disabled, errorLabel, feedbackDuration, from, hoist, successLabel, tooltipPlacement, value, ...rest } = Astro.props;
+
+---
+
+<sl-copy-button 
+    {copyLabel}
+    {disabled}
+    {errorLabel}
+    {feedbackDuration}
+    {from}
+    {hoist}
+    {successLabel}
+    {tooltipPlacement}
+    {value}
+    {...rest}
+    >
+    <slot />
+</sl-copy-button>
+
+<script>
+
+</script>

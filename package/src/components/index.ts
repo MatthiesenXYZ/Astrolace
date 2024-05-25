@@ -5,8 +5,9 @@ export { default as Badge } from './Badge.astro';
 export * from './breadcrumbs/index.ts';
 export * from './buttons/index.ts';
 export { default as Card } from './Card.astro';
-
-
+export * from './carousel/index.ts';
+export { default as Checkbox } from './Checkbox.astro';
+export { default as ColorPicker } from './ColorPicker.astro';
 
 
 export * from './icon/index.ts';

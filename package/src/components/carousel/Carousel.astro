@@ -1,0 +1,58 @@
+---
+import type { SlCarousel } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlCarousel, any>{
+    /** When set, allows the user to navigate the carousel in the same direction indefinitely. */
+    loop?: boolean;
+    /** When set, show the carousel's navigation. */
+    navigation?: boolean;
+    /** When set, show the carousel's pagination indicators. */
+    pagination?: boolean;
+    /** When set, the slides will scroll automatically when the user is not interacting with them.  */
+    autoplay?: boolean;
+    /** Specifies the amount of time, in milliseconds, between each automatic scroll.  */
+    autoplayInterval?: number;
+    /** Specifies how many slides should be shown at a given time.  */
+    slidesPerPage?: number;
+    /**
+     * Specifies the number of slides the carousel will advance when scrolling, useful when specifying a `slides-per-page`
+     * greater than one. It can't be higher than `slides-per-page`.
+     */
+    slidesPerMove?: number;
+    /** Specifies the orientation in which the carousel will lay out.  */
+    orientation?: 'horizontal' | 'vertical';
+    /** When set, it is possible to scroll through the slides by dragging them with the mouse. */
+    mouseDragging?: boolean;
+}
+
+const { 
+    loop, navigation, 
+    pagination, autoplay, 
+    autoplayInterval = 3000, 
+    slidesPerPage = 1, 
+    slidesPerMove = 1, 
+    orientation = "horizontal",
+    mouseDragging,
+    ...rest
+} = Astro.props;
+
+---
+
+<sl-carousel 
+    {loop} 
+    {navigation} 
+    {pagination} 
+    {autoplay} 
+    {autoplayInterval} 
+    {slidesPerPage} 
+    {slidesPerMove} 
+    {orientation} 
+    {mouseDragging}
+    {...rest}
+    >
+    <slot />
+</sl-carousel>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/carousel/carousel.js';
+</script>

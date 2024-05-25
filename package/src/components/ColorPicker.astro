@@ -1,0 +1,89 @@
+---
+import type { SlColorPicker } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlColorPicker, any> {
+    /**
+     * The current value of the color picker. The value's format will vary based the `format` attribute. To get the value
+     * in a specific format, use the `getFormattedValue()` method. The value is submitted as a name/value pair with form
+     * data.
+     */
+    value?: string;
+    /** The default value of the form control. Primarily used for resetting the form control. */
+    defaultValue?: string;
+    /**
+     * The color picker's label. This will not be displayed, but it will be announced by assistive devices. If you need to
+     * display HTML, you can use the `label` slot` instead.
+     */
+    label?: string;
+    /**
+     * The format to use. If opacity is enabled, these will translate to HEXA, RGBA, HSLA, and HSVA respectively. The color
+     * picker will accept user input in any format (including CSS color names) and convert it to the desired format.
+     */
+    format?: 'hex' | 'rgb' | 'hsl' | 'hsv';
+    /** Renders the color picker inline rather than in a dropdown. */
+    inline?: boolean;
+    /** Determines the size of the color picker's trigger. This has no effect on inline color pickers. */
+    size?: 'small' | 'medium' | 'large';
+    /** Removes the button that lets users toggle between format.   */
+    noFormatToggle?: boolean;
+    /** The name of the form control, submitted as a name/value pair with form data. */
+    name?: string;
+    /** Disables the color picker. */
+    disabled?: boolean;
+    /**
+     * Enable this option to prevent the panel from being clipped when the component is placed inside a container with
+     * `overflow: auto|scroll`. Hoisting uses a fixed positioning strategy that works in many, but not all, scenarios.
+     */
+    hoist?: boolean;
+    /** Shows the opacity slider. Enabling this will cause the formatted value to be HEXA, RGBA, or HSLA. */
+    opacity?: boolean;
+    /** By default, values are lowercase. With this attribute, values will be uppercase instead. */
+    uppercase?: boolean;
+    /**
+     * One or more predefined color swatches to display as presets in the color picker. Can include any format the color
+     * picker can parse, including HEX(A), RGB(A), HSL(A), HSV(A), and CSS color names. Each color must be separated by a
+     * semicolon (`;`). Alternatively, you can pass an array of color values to this property using JavaScript.
+     */
+    swatches?: string | string[];
+    /**
+     * By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+     * to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+     * the same document or shadow root for this to work.
+     */
+    form?: string;
+    /** Makes the color picker a required field. */
+    required?: boolean;
+}
+
+const { 
+    defaultValue, disabled, form, format, 
+    hoist, inline, label, name, noFormatToggle,
+    opacity, required, size, swatches, uppercase, 
+    value, ...rest
+} = Astro.props;
+
+---
+
+<sl-color-picker
+    {defaultValue}
+    {disabled}
+    {form}
+    {format}
+    {hoist}
+    {inline}
+    {label}
+    {name}
+    {noFormatToggle}
+    {opacity}
+    {required}
+    {size}
+    {swatches}
+    {uppercase}
+    {value}
+    {...rest}
+    >
+</sl-color-picker>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/color-picker/color-picker.js';
+</script>

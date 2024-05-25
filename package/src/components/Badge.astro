@@ -2,8 +2,11 @@
 import type { SlBadge } from '@shoelace-style/shoelace';
 
 interface Props extends Omit<SlBadge, any>{
+    /** The badge's theme variant. */
     variant?: 'primary' | 'success' | 'neutral' | 'warning' | 'danger';
+    /** Draws a pill-style badge with rounded edges. */
     pill?: boolean;
+    /** Makes the badge pulsate to draw attention. */
     pulse?: boolean;
 }
 

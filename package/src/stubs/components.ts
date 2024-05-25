@@ -105,6 +105,87 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      */
     export const Card: typeof import('${resolve('../components/index.ts')}').Card;
     /**
+     * Shoelace.style <sl-carousel> component
+     * 
+     * @see https://shoelace.style/components/carousel
+     * 
+     * @param {boolean} loop - Whether the carousel should loop or not.
+     * @param {boolean} navigation - Whether the carousel should show navigation arrows or not.
+     * @param {boolean} pagination - Whether the carousel should show pagination or not.
+     * @param {boolean} autoplay - Whether the carousel should autoplay or not.
+     * @param {number} autoplayInterval - The interval in milliseconds between autoplay slides.
+     * @param {number} slidesPerPage - The number of slides to show per page.
+     * @param {number} slidesPerMove - The number of slides to move when the carousel navigates.
+     * @param {string} orientation - The orientation of the carousel. Can be 'horizontal', 'vertical'.
+     * @param {boolean} mouseDragging - Whether the carousel should be draggable with the mouse or not.
+     */
+    export const Carousel: typeof import('${resolve('../components/index.ts')}').Carousel;
+    /**
+     * Shoelace.style <sl-carousel-item> component
+     * 
+     * @see https://shoelace.style/components/carousel-item 
+     */
+    export const CarouselItem: typeof import('${resolve('../components/index.ts')}').CarouselItem;
+    /**
+     * Shoelace.style <sl-checkbox> component
+     * 
+     * @see https://shoelace.style/components/checkbox
+     * 
+     * @param {string} name - The name of the checkbox.
+     * @param {string} value - The value of the checkbox.
+     * @param {string} size - The size of the checkbox. Can be 'small', 'medium', 'large'.
+     * @param {boolean} checked - Whether the checkbox is checked or not.
+     * @param {boolean} indeterminate - Whether the checkbox is indeterminate or not.
+     * @param {boolean} disabled - Whether the checkbox is disabled or not.
+     * @param {boolean} defaultChecked - Whether the checkbox is checked by default or not.
+     * @param {boolean} required - Whether the checkbox is required or not.
+     * @param {string} form - The form the checkbox belongs to.
+     * @param {string} helpText - The help text of the checkbox.
+     * @slot {default} - The checkbox's label.
+     */
+    export const Checkbox: typeof import('${resolve('../components/index.ts')}').Checkbox;
+    /**
+     * Shoelace.style <sl-color-picker> component
+     * 
+     * @see https://shoelace.style/components/color-picker
+     * 
+     * @param {string} value - The value of the color picker.
+     * @param {string} format - The format of the color picker. Can be 'hex', 'rgb', 'hsl'.
+     * @param {string} size - The size of the color picker. Can be 'small', 'medium', 'large'.
+     * @param {string} defaultValue - The default value of the color picker.
+     * @param {string} label - The label of the color picker.
+     * @param {string} name - The name of the color picker.
+     * @param {boolean} disabled - Whether the color picker is disabled or not.
+     * @param {boolean} inline - Whether the color picker is inline or not.
+     * @param {boolean} noFormatToggle - Whether the color picker has a format toggle or not.
+     * @param {boolean} hoist - Whether the color picker should be hoisted to the body to avoid clipping issues.
+     * @param {boolean} opacity - Whether the color picker supports opacity or not.
+     * @param {boolean} uppercase - Whether the color picker value should be uppercase or not.
+     * @param {string} swatches - The predefined color swatches to display as presets in the color picker.
+     * @param {string} form - The form the color picker belongs to.
+     * @param {boolean} required - Whether the color picker is required or not.
+     */
+    export const ColorPicker: typeof import('${resolve('../components/index.ts')}').ColorPicker;
+    /**
+     * Shoelace.style <sl-copy-button> component
+     * 
+     * @see https://shoelace.style/components/copy-button
+     * 
+     * @param {string} value - The value to copy.
+     * @param {string} from - The selector of the element to copy from.
+     * @param {boolean} disabled - Whether the copy button is disabled or not.
+     * @param {string} successLabel - The label to display when the value is copied.
+     * @param {string} copyLabel - The label to display on the copy button.
+     * @param {string} feedbackDuration - The duration in milliseconds to show the feedback message.
+     * @param {string} feedbackPlacement - The placement of the feedback message. Can be 'top', 'right', 'bottom', 'left'.
+     * @param {string} errorLabel - The label to display when the value cannot be copied.
+     * @param {boolean} hoist - Whether the copy button should be hoisted to the body to avoid clipping issues.
+     */
+    export const CopyButton: typeof import('${resolve('../components/index.ts')}').CopyButton;
+
+
+
+    /**
      * Shoelace.style <sl-icon> component
      * 
      * @see https://shoelace.style/components/icon
@@ -129,6 +210,9 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} disabled - Whether the icon is disabled or not.
      */
     export const IconButton: typeof import('${resolve('../components/index.ts')}').IconButton;
+
+    
+
     /**
      * Shoelace.style <sl-tooltip> component
      * 
@@ -143,6 +227,9 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} hoist - Whether the tooltip should be hoisted to the body to avoid clipping issues.
      */
     export const Tooltip: typeof import('${resolve('../components/index.ts')}').Tooltip;
+
+    
+
 };`);
 
 export const componentFile = componentsDTS.text();

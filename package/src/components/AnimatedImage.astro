@@ -2,9 +2,13 @@
 import type { SlAnimatedImage } from '@shoelace-style/shoelace';
 
 interface Props extends Omit<SlAnimatedImage, any>{
+    /** The path to the image to load. */
     src?: string;
+    /** A description of the image used by assistive devices. */
     alt?: string;
+    /** Plays the animation. When this attribute is remove, the animation will pause. */
     play?: boolean;
+    /** Customizes the icons used for the play and pause buttons. */
     slots?: {
         playIcon?: string;
         pauseIcon?: string;

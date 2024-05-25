@@ -2,12 +2,27 @@
 import type { SlIconButton } from 'astrolace:types';
 
 interface Props extends Omit<SlIconButton, any> {
+    /** The name of the icon to draw. Available names depend on the icon library being used. */
     name?: string;
+    /** The name of a registered custom icon library. */
+    library?: string;
+    /**
+     * An external URL of an SVG file. Be sure you trust the content you are including, as it will be executed as code and
+     * can result in XSS attacks.
+     */
     src?: string;
+    /** When set, the underlying button will be rendered as an `<a>` with this `href` instead of a `<button>`. */
     href?: string;
-    target?: "_blank" | "_self" | "_parent" | "_top";
+    /** Tells the browser where to open the link. Only used when `href` is set. */
+    target?: '_blank' | '_parent' | '_self' | '_top';
+    /** Tells the browser to download the linked file as this filename. Only used when `href` is set. */
     download?: string;
+    /**
+     * A description that gets read by assistive devices. For optimal accessibility, you should always include a label
+     * that describes what the icon button does.
+     */
     label?: string;
+    /** Disables the button. */
     disabled?: boolean;
 }
 

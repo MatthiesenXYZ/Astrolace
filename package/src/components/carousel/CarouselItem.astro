@@ -1,0 +1,10 @@
+---
+const { ...rest } = Astro.props;
+---
+<sl-carousel-item {...rest}>
+    <slot />
+</sl-carousel-item>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/carousel-item/carousel-item.js';
+</script>

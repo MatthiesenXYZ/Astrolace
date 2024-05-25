@@ -2,12 +2,23 @@
 import type { SlIcon } from 'astrolace:types';
 
 interface Props extends Omit<SlIcon, any> {
+    /** The name of the icon to draw. Available names depend on the icon library being used. */
     name?: string;
+    /**
+     * An external URL of an SVG file. Be sure you trust the content you are including, as it will be executed as code and
+     * can result in XSS attacks.
+     */
     src?: string;
+    /**
+     * An alternate description to use for assistive devices. If omitted, the icon will be considered presentational and
+     * ignored by assistive devices.
+     */
     label?: string;
+    /** The name of a registered custom icon library. */
+    library?: string;
 }
 
-const { name, src, label, ...rest } = Astro.props;
+const { name, src, label, library, ...rest } = Astro.props;
 
 ---
 
@@ -15,6 +26,7 @@ const { name, src, label, ...rest } = Astro.props;
     {name} 
     {src} 
     {label} 
+    {library}
     {...rest} 
     >
 </sl-icon>

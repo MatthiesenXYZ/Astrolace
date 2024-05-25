@@ -1,0 +1,58 @@
+---
+import type { SlCheckbox } from '@shoelace-style/shoelace';
+
+
+interface Props extends Omit<SlCheckbox, any> {
+    title?: string;
+    /** The name of the checkbox, submitted as a name/value pair with form data. */
+    name?: string;
+    /** The current value of the checkbox, submitted as a name/value pair with form data. */
+    value?: string;
+    /** The checkbox's size. */
+    size?: 'small' | 'medium' | 'large';
+    /** Disables the checkbox. */
+    disabled?: boolean;
+    /** Draws the checkbox in a checked state. */
+    checked?: boolean;
+    /**
+     * Draws the checkbox in an indeterminate state. This is usually applied to checkboxes that represents a "select
+     * all/none" behavior when associated checkboxes have a mix of checked and unchecked states.
+     */
+    indeterminate?: boolean;
+    /** The default value of the form control. Primarily used for resetting the form control. */
+    defaultChecked?: boolean;
+    /**
+     * By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+     * to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+     * the same document or shadow root for this to work.
+     */
+    form?: string;
+    /** Makes the checkbox a required field. */
+    required?: boolean;
+    /** The checkbox's help text. If you need to display HTML, use the `help-text` slot instead. */
+    helpText?: string;
+}
+
+const { checked, defaultChecked, disabled, form, helpText, indeterminate, name, required, size, title, value, ...rest } = Astro.props;
+---
+
+<sl-checkbox 
+    {checked}
+    {defaultChecked}
+    {disabled}
+    {form}
+    {helpText}
+    {indeterminate}
+    {name}
+    {required}
+    {size}
+    {title}
+    {value}
+    {...rest}
+    >
+    <slot />
+</sl-checkbox>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/checkbox/checkbox.js';
+</script>
