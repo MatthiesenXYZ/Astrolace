@@ -1,0 +1,21 @@
+---
+import type { SlBreadcrumbItem } from '@shoelace-style/shoelace';
+
+
+interface Props extends Omit<SlBreadcrumbItem, any> {
+    href?: string;
+    target?: string;
+    rel?: string;
+}
+
+const { href, rel = "noreferrer noopener", target, ...rest } = Astro.props;
+
+---
+
+<sl-breadcrumb-item {href} {rel} {target} {...rest}>
+    <slot />
+</sl-breadcrumb-item>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/breadcrumb-item/breadcrumb-item.js';
+</script>

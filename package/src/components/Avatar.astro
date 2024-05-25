@@ -1,0 +1,33 @@
+---
+import type { SlAvatar } from '@shoelace-style/shoelace'
+import type { ImageMetadata } from 'astro';
+
+
+interface Props extends Omit<SlAvatar, any>{
+    image: string | ImageMetadata;
+    label?: string;
+    initials?: string;
+    loading?: "lazy" | "eager";
+    shape?: "circle" | "square" | "rounded";
+    defaultImage?: string;
+}
+
+const { image, initials, label, loading = "eager", shape = "circle", defaultImage = "person-fill", ...rest } = Astro.props;
+
+let src: string;
+
+if (typeof image === 'string') {
+    src = image;
+} else {
+    src = image.src;
+}
+
+---
+
+<sl-avatar image={src} {initials} {label} {loading} {shape} {...rest}>
+    <sl-icon slot="icon" name={defaultImage}></sl-icon>
+</sl-avatar>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/avatar/avatar.js';
+</script>

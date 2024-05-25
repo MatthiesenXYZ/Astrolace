@@ -17,6 +17,58 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      */
     export const Alert: typeof import('${resolve('../components/index.ts')}').Alert;
     /**
+     * Shoelace.style <sl-animated-image> component
+     * 
+     * @see https://shoelace.style/components/animated-image
+     * 
+     * @param {string} src - The URL of the image to display.
+     * @param {string} alt - The accessible label of the image.
+     * @param {boolean} play - Whether the image is playing or not. (autoplay)
+     * @param {object} slots
+     * @param {object} slots.playIcon - The icon to display when the image is paused. (SlIcon name | default: 'play')
+     * @param {object} slots.pauseIcon - The icon to display when the image is playing. (SlIcon name | default: 'pause')
+     */
+    export const AnimatedImage: typeof import('${resolve('../components/index.ts')}').AnimatedImage;
+    /**
+     * Shoelace.style <sl-avatar> component
+     * 
+     * @see https://shoelace.style/components/avatar
+     * 
+     * @param {string} image - The URL of the image to display.
+     * @param {string} label - The accessible label of the image.
+     * @param {string} initials - The initials to display.
+     * @param {string} shape - The shape of the avatar. Can be 'circle', 'square', 'rounded'.
+     * @param {string} loading - The loading state of the avatar. Can be 'lazy', 'eager'.
+     * @param {string} defaultImage - The sl-icon to display when no image is provided or the image fails to load. 
+     */
+    export const Avatar: typeof import('${resolve('../components/index.ts')}').Avatar;
+    /**
+     * Shoelace.style <sl-badge> component
+     * 
+     * @see https://shoelace.style/components/badge
+     * 
+     * @param {string} variant - The variant of the badge. Can be 'primary', 'success', 'neutral', 'warning', 'danger'.
+     * @param {boolean} pill - Whether the badge is pill-shaped or not.
+     * @param {boolean} pulse - Whether the badge is pulsing or not.
+     */
+    export const Badge: typeof import('${resolve('../components/index.ts')}').Badge;
+    /**
+     * Shoelace.style <sl-breadcrumb> component
+     * 
+     * @see https://shoelace.style/components/breadcrumb
+     */
+    export const Breadcrumb: typeof import('${resolve('../components/index.ts')}').Breadcrumb;
+    /**
+     * Shoelace.style <sl-breadcrumb-item> component
+     * 
+     * @see https://shoelace.style/components/breadcrumb-item
+     * 
+     * @param {string} href - The URL the breadcrumb item links to.
+     * @param {string} target - The target type of the link. Can be '_blank', '_self', '_parent', '_top'.
+     * @param {string} rel - The rel attribute to use on the link. Only used when href is set.
+     */
+    export const BreadcrumbItem: typeof import('${resolve('../components/index.ts')}').BreadcrumbItem;
+    /**
      * Shoelace.style <sl-button> component
      * 
      * @see https://shoelace.style/components/button
@@ -46,6 +98,12 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} label - The label of the button group.
      */
     export const ButtonGroup: typeof import('${resolve('../components/index.ts')}').ButtonGroup;
+    /**
+     * Shoelace.style <sl-card> component
+     * 
+     * @see https://shoelace.style/components/card
+     */
+    export const Card: typeof import('${resolve('../components/index.ts')}').Card;
     /**
      * Shoelace.style <sl-icon> component
      * 

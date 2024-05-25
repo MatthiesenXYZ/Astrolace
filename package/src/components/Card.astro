@@ -1,0 +1,12 @@
+---
+const { ...rest } = Astro.props;
+
+---
+
+<sl-card {...rest}>
+    <slot />
+</sl-card>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/card/card.js';
+</script>

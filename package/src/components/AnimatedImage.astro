@@ -1,0 +1,27 @@
+---
+import type { SlAnimatedImage } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlAnimatedImage, any>{
+    src?: string;
+    alt?: string;
+    play?: boolean;
+    slots?: {
+        playIcon?: string;
+        pauseIcon?: string;
+    }
+}
+
+const { src, alt, play, slots, ...rest } = Astro.props;
+
+const playIcon = slots?.playIcon || 'play';
+const pauseIcon = slots?.pauseIcon || 'pause';
+---
+
+<sl-animated-image {src} {alt} {play} {...rest}>
+    <sl-icon slot="play-icon" name={playIcon}></sl-icon>
+    <sl-icon slot="pause-icon" name={pauseIcon}></sl-icon>
+</sl-animated-image>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/animated-image/animated-image.js';
+</script>

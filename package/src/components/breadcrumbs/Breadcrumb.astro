@@ -1,0 +1,20 @@
+---
+import type { SlBreadcrumb } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlBreadcrumb, any>{
+    label?: string;
+    separator?: string;
+}
+
+const { label, separator = "chevron-right" } = Astro.props;
+
+---
+
+<sl-breadcrumb {label}>
+    <sl-icon name={separator} slot="separator"></sl-icon>
+    <slot />
+</sl-breadcrumb>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/breadcrumb/breadcrumb.js';
+</script>

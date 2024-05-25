@@ -1,0 +1,20 @@
+---
+import type { SlBadge } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlBadge, any>{
+    variant?: 'primary' | 'success' | 'neutral' | 'warning' | 'danger';
+    pill?: boolean;
+    pulse?: boolean;
+}
+
+const { variant = "primary", pill, pulse, ...rest } = Astro.props;
+
+---
+
+<sl-badge {variant} {pill} {pulse} {...rest}>
+    <slot />
+</sl-badge>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/badge/badge.js';
+</script>

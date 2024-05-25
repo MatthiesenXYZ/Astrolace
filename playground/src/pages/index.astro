@@ -1,6 +1,6 @@
 ---
 import { ShoelaceHeader } from "astrolace:components/header";
-import { Icon, IconButton, Tooltip, Button, ButtonGroup, Alert } from "astrolace:components";
+import { Icon, IconButton, Tooltip, Button, ButtonGroup, Alert, AnimatedImage, Avatar, Badge, Breadcrumb, BreadcrumbItem, Card } from "astrolace:components";
 
 ---
 <html>
@@ -40,11 +40,13 @@ import { Icon, IconButton, Tooltip, Button, ButtonGroup, Alert } from "astrolace
 		</div>
 
 		<div>
-			<h2>Button Group</h2>
+			<h2>Button Group (with a badge!)</h2>
 			<ButtonGroup>
 				<Button variant="default" size="medium">Hello!</Button>
 				<Button variant="default" size="medium">Hello!</Button>
-				<Button variant="default" size="medium">Hello!</Button>
+				<Button variant="default" size="medium">Hello!
+					<Badge pill>2</Badge>
+				</Button>
 			</ButtonGroup>
 		</div>
 
@@ -56,4 +58,29 @@ import { Icon, IconButton, Tooltip, Button, ButtonGroup, Alert } from "astrolace
 			</Alert>
 		</div>
 
+		<div>
+			<h2>Animated Image</h2>
+			<AnimatedImage src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2hkN28zd2p5bHgwbWZxYWM3eGN5NHIyNGVqMmFmdWRlbjhlb28ydiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/AAqUzS8UUiUlTBXIzH/giphy.gif" alt="A test gif" />
+		</div>
+
+		<div>
+			<h2>Avatar</h2>
+			<Avatar image="https://avatars.githubusercontent.com/u/30383579?v=4" />
+		</div>
+
+		<div>
+			<h2>Breadcrumb</h2>
+			<Breadcrumb>
+				<BreadcrumbItem href="https://google.com">Google</BreadcrumbItem>
+				<BreadcrumbItem href="https://github.com">GitHub</BreadcrumbItem>
+				<BreadcrumbItem>Current Page</BreadcrumbItem>
+			</Breadcrumb>
+		</div>
+
+		<div>
+			<h2>Card</h2>
+			<Card>
+				Hello!
+			</Card>
+		</div>
 </html>
