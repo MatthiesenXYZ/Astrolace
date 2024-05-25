@@ -15,7 +15,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} closable - Whether the alert is dismissible or not.
      * @param {number} duration - The duration of the alert in milliseconds.
      */
-    export const Alert: typeof import('${resolve('../components/index.ts')}').Alert;
+    export const Alert: typeof import('${resolve('../components/Alert.astro')}').default;
     /**
      * Shoelace.style <sl-animated-image> component
      * 
@@ -28,7 +28,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {object} slots.playIcon - The icon to display when the image is paused. (SlIcon name | default: 'play')
      * @param {object} slots.pauseIcon - The icon to display when the image is playing. (SlIcon name | default: 'pause')
      */
-    export const AnimatedImage: typeof import('${resolve('../components/index.ts')}').AnimatedImage;
+    export const AnimatedImage: typeof import('${resolve('../components/AnimatedImage.astro')}').default;
     /**
      * Shoelace.style <sl-avatar> component
      * 
@@ -41,7 +41,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} loading - The loading state of the avatar. Can be 'lazy', 'eager'.
      * @param {string} defaultImage - The sl-icon to display when no image is provided or the image fails to load. 
      */
-    export const Avatar: typeof import('${resolve('../components/index.ts')}').Avatar;
+    export const Avatar: typeof import('${resolve('../components/Avatar.astro')}').default;
     /**
      * Shoelace.style <sl-badge> component
      * 
@@ -51,13 +51,13 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} pill - Whether the badge is pill-shaped or not.
      * @param {boolean} pulse - Whether the badge is pulsing or not.
      */
-    export const Badge: typeof import('${resolve('../components/index.ts')}').Badge;
+    export const Badge: typeof import('${resolve('../components/Badge.astro')}').default;
     /**
      * Shoelace.style <sl-breadcrumb> component
      * 
      * @see https://shoelace.style/components/breadcrumb
      */
-    export const Breadcrumb: typeof import('${resolve('../components/index.ts')}').Breadcrumb;
+    export const Breadcrumb: typeof import('${resolve('../components/breadcrumbs/Breadcrumb.astro')}').default;
     /**
      * Shoelace.style <sl-breadcrumb-item> component
      * 
@@ -67,7 +67,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} target - The target type of the link. Can be '_blank', '_self', '_parent', '_top'.
      * @param {string} rel - The rel attribute to use on the link. Only used when href is set.
      */
-    export const BreadcrumbItem: typeof import('${resolve('../components/index.ts')}').BreadcrumbItem;
+    export const BreadcrumbItem: typeof import('${resolve('../components/breadcrumbs/BreadcrumbItem.astro')}').default;
     /**
      * Shoelace.style <sl-button> component
      * 
@@ -89,7 +89,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} value - The value of the button.
      * @param {string} rel - When using href, this attribute will map to the underlying links rel attribute. Unlike regular links, the default is noreferrer noopener to prevent security exploits. However, if youre using target to point to a specific tab/window, this will prevent that from working correctly. You can remove or change the default value by setting the attribute to an empty string or a value of your choice, respectively.
      */
-    export const Button: typeof import('${resolve('../components/index.ts')}').Button;
+    export const Button: typeof import('${resolve('../components/buttons/Button.astro')}').default;
     /**
      * Shoelace.style <sl-button-group> component
      * 
@@ -97,13 +97,13 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * 
      * @param {string} label - The label of the button group.
      */
-    export const ButtonGroup: typeof import('${resolve('../components/index.ts')}').ButtonGroup;
+    export const ButtonGroup: typeof import('${resolve('../components/buttons/ButtonGroup.astro')}').default;
     /**
      * Shoelace.style <sl-card> component
      * 
      * @see https://shoelace.style/components/card
      */
-    export const Card: typeof import('${resolve('../components/index.ts')}').Card;
+    export const Card: typeof import('${resolve('../components/Card.astro')}').default;
     /**
      * Shoelace.style <sl-carousel> component
      * 
@@ -119,13 +119,13 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} orientation - The orientation of the carousel. Can be 'horizontal', 'vertical'.
      * @param {boolean} mouseDragging - Whether the carousel should be draggable with the mouse or not.
      */
-    export const Carousel: typeof import('${resolve('../components/index.ts')}').Carousel;
+    export const Carousel: typeof import('${resolve('../components/carousel/Carousel.astro')}').default;
     /**
      * Shoelace.style <sl-carousel-item> component
      * 
      * @see https://shoelace.style/components/carousel-item 
      */
-    export const CarouselItem: typeof import('${resolve('../components/index.ts')}').CarouselItem;
+    export const CarouselItem: typeof import('${resolve('../components/carousel/CarouselItem.astro')}').default;
     /**
      * Shoelace.style <sl-checkbox> component
      * 
@@ -143,7 +143,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} helpText - The help text of the checkbox.
      * @slot {default} - The checkbox's label.
      */
-    export const Checkbox: typeof import('${resolve('../components/index.ts')}').Checkbox;
+    export const Checkbox: typeof import('${resolve('../components/Checkbox.astro')}').default;
     /**
      * Shoelace.style <sl-color-picker> component
      * 
@@ -165,7 +165,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} form - The form the color picker belongs to.
      * @param {boolean} required - Whether the color picker is required or not.
      */
-    export const ColorPicker: typeof import('${resolve('../components/index.ts')}').ColorPicker;
+    export const ColorPicker: typeof import('${resolve('../components/ColorPicker.astro')}').default;
     /**
      * Shoelace.style <sl-copy-button> component
      * 
@@ -181,7 +181,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} errorLabel - The label to display when the value cannot be copied.
      * @param {boolean} hoist - Whether the copy button should be hoisted to the body to avoid clipping issues.
      */
-    export const CopyButton: typeof import('${resolve('../components/index.ts')}').CopyButton;
+    export const CopyButton: typeof import('${resolve('../components/buttons/CopyButton.astro')}').default;
     /**
      * Shoelace.style <sl-details> component
      * 
@@ -191,7 +191,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} open - Whether the details is open or not.
      * @param {boolean} disabled - Whether the details is disabled or not.
      */
-    export const Details: typeof import('${resolve('../components/index.ts')}').Details;
+    export const Details: typeof import('${resolve('../components/Details.astro')}').default;
     /**
      * Shoelace.style <sl-dialog> component
      * 
@@ -202,7 +202,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} noHeader - Whether the dialog has a header or not.
      * @param {string} id - The id of the dialog.
      */
-    export const Dialog: typeof import('${resolve('../components/index.ts')}').Dialog;
+    export const Dialog: typeof import('${resolve('../components/Dialog.astro')}').default;
     /**
      * Shoelace.style <sl-divider> component
      * 
@@ -210,7 +210,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * 
      * @param {boolean} vertical - Whether the divider is vertical or not.
      */
-    export const Divider: typeof import('${resolve('../components/index.ts')}').Divider;
+    export const Divider: typeof import('${resolve('../components/Divider.astro')}').default;
     /**
      * Shoelace.style <sl-drawer> component
      * 
@@ -222,7 +222,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} noHeader - Whether the drawer has a header or not.
      * @param {boolean} contained - Whether the drawer is contained or not.
      */
-    export const Drawer: typeof import('${resolve('../components/index.ts')}').Drawer;
+    export const Drawer: typeof import('${resolve('../components/Drawer.astro')}').default;
     /**
      * Shoelace.style <sl-dropdown> component
      * 
@@ -238,7 +238,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {HTMLElement} containingElement - The element that contains the dropdown. The dropdown will close when the user interacts outside of this element.
      * @param {string} sync - Syncs the width of the dropdown with the trigger. can be 'width', 'height', 'both', 'undefined'.
      */
-    export const Dropdown: typeof import('${resolve('../components/index.ts')}').Dropdown;
+    export const Dropdown: typeof import('${resolve('../components/Dropdown.astro')}').default;
     /**
      * Shoelace.style <sl-format-bytes> component
      * 
@@ -249,7 +249,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} display - Determines how to display the result, e.g. "100 bytes", "100 b", or "100b".
      * @param {string} lang - The language to use when formatting the number.
      */
-    export const FormatBytes: typeof import('${resolve('../components/index.ts')}').FormatBytes;
+    export const FormatBytes: typeof import('${resolve('../components/formatters/FormatBytes.astro')}').default;
     /**
      * Shoelace.style <sl-format-date> component
      * 
@@ -269,7 +269,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} timeZone - The time zone to use when formatting the date.
      * @param {string} hourFormat - The hour format to use when formatting the date. Can be 'auto', '12', '24'.
      */
-    export const FormatDate: typeof import('${resolve('../components/index.ts')}').FormatDate;
+    export const FormatDate: typeof import('${resolve('../components/formatters/FormatDate.astro')}').default;
     /**
      * Shoelace.style <sl-format-number> component
      * 
@@ -287,7 +287,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {number} maximumSignificantDigits - The maximum number of significant digits to use,. Possible values are 1-21.
      * @param {string} lang - The language to use when formatting the number.
      */
-    export const FormatNumber: typeof import('${resolve('../components/index.ts')}').FormatNumber;
+    export const FormatNumber: typeof import('${resolve('../components/formatters/FormatNumber.astro')}').default;
     /**
      * Shoelace.style <sl-icon> component
      * 
@@ -298,7 +298,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} src - The URL of the image to display.
      * @param {string} label - The accessible label of the icon.
      */
-    export const Icon: typeof import('${resolve('../components/index.ts')}').Icon;
+    export const Icon: typeof import('${resolve('../components/icon/Icon.astro')}').default;
     /**
      * Shoelace.style <sl-icon-button> component
      * 
@@ -312,7 +312,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} download - Whether the link should be downloaded or not.
      * @param {boolean} disabled - Whether the icon is disabled or not.
      */
-    export const IconButton: typeof import('${resolve('../components/index.ts')}').IconButton;
+    export const IconButton: typeof import('${resolve('../components/icon/IconButton.astro')}').default;
     /**
      * Shoelace.style <sl-image-comparer> component
      * 
@@ -320,7 +320,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * 
      * @param {string} position - The position of the divider as a percentage.
      */
-    export const ImageComparer: typeof import('${resolve('../components/index.ts')}').ImageComparer;
+    export const ImageComparer: typeof import('${resolve('../components/ImageComparer.astro')}').default;
     /**
      * Shoelace.style <sl-include> component
      * 
@@ -330,7 +330,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} mode - The fetch mode to use. Can be 'cors', 'no-cors', 'same-origin'.
      * @param {boolean} allowScripts - Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks.
      */
-    export const Include: typeof import('${resolve('../components/index.ts')}').Include;
+    export const Include: typeof import('${resolve('../components/Include.astro')}').default;
 
     
 
@@ -347,10 +347,29 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {number} skidding - The distance in pixels from the edge of the trigger that the tooltip will be positioned.
      * @param {boolean} hoist - Whether the tooltip should be hoisted to the body to avoid clipping issues.
      */
-    export const Tooltip: typeof import('${resolve('../components/index.ts')}').Tooltip;
+    export const Tooltip: typeof import('${resolve('../components/Tooltip.astro')}').default;
 
     
 
+};`);
+
+componentsDTS.addLines(`declare module 'astrolace:components/header' {
+    /** 
+     * Shoelace.style header component.
+     * 
+     * @description This component is used to include the Shoelace.style loader in your Astro Layout.
+     * 
+     * @usage Put this in your Astro Layout's head tag.
+     * 
+     * @example
+     * 
+     * <html>
+     *    <head>
+     *       <ShoelaceHeader />
+     *    </head>
+     * </html>
+    */
+    export const ShoelaceHeader: typeof import('${resolve('../components/header/ShoelaceHeader.astro')}').default;
 };`);
 
 export const componentFile = componentsDTS.text();

@@ -1,7 +1,7 @@
 import { addDts, addVirtualImports, createResolver, defineIntegration } from "astro-integration-kit";
 import { integrationLogger } from "./utils";
 import { optionsSchema, } from "./schemas";
-import { componentFile, componentHeaderFile, typesFile, toolsFile } from "./stubs";
+import { componentFile, typesFile, toolsFile } from "./stubs";
 
 export default defineIntegration({
 	name: "@matthiesenxyz/astrolace",
@@ -59,12 +59,21 @@ export default defineIntegration({
 							.map(([name, path]) => `export { default as ${name} } from '${path}';`)
 							.join('\n');
 
+					const virtualComponentsHeader = {
+						ShoelaceHeader: resolve('./components/header/ShoelaceHeader.astro'),
+					}
+
+					const astrolaceComponentsHeader = Object
+							.entries(virtualComponentsHeader)
+							.map(([name, path]) => `export { default as ${name} } from '${path}';`)
+							.join('\n');
+
 					// Add virtual imports
 					addVirtualImports(params, {
 						name,
 						imports: {
 							'astrolace:components': astrolaceComponents,
-							'astrolace:components/header': `export * from '${resolve('./components/header/index.ts')}';`,
+							'astrolace:components/header': astrolaceComponentsHeader,
 							'astrolace:types': `export * from '${resolve('./types/index.ts')}';`,
 							'astrolace:utils': `export * from '${resolve('./tools/index.ts')}';`,
 						}
@@ -72,14 +81,8 @@ export default defineIntegration({
 
 					injectScript("page-ssr", `import "${resolve('./shoelaceLib/light.css')}";`);
 					injectScript("page-ssr", `import "${resolve('./shoelaceLib/dark.css')}";`);
-					injectScript("page", `import "${resolve('./shoelaceLib/loader.js')}";`);
 
 					// Add the .d.ts files
-					addDts(params, {
-						name: 'astrolace-components-header',
-						content: componentHeaderFile
-					});
-
 					addDts(params, {
 						name: 'astrolace-components',
 						content: componentFile
@@ -94,6 +97,9 @@ export default defineIntegration({
 						name: 'astrolace-tools',
 						content: toolsFile
 					});
+
+					// Log the setup of the integration
+					integrationLogger(logger, verbose, "info", "Astrolace integration setup complete");
 				},
 			},
 		};
