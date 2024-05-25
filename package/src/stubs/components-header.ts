@@ -6,9 +6,9 @@ const componentsHeadersDTS = fileFactory();
 
 componentsHeadersDTS.addLines(`declare module 'astrolace:components/header' {
     /** 
-     * Shoelace.style Themes and Loader
+     * Shoelace.style header component.
      * 
-     * This component will allow shoelace.style themes to work with the custom components.
+     * @description This component is used to include the default icons for the Shoelace.style library.
      * 
      * @usage Put this in your Astro Layout's head tag.
      * 

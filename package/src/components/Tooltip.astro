@@ -1,7 +1,7 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { SlTooltip } from '@shoelace-style/shoelace';
 
-interface Props extends Partial<HTMLAttributes<'div'>> {
+interface Props extends Omit<SlTooltip, any> {
     placement?: 'top' | 'top-start' | 'top-end' | 'right' | 'right-start' | 'right-end' | 'bottom' | 'bottom-start' | 'bottom-end' | 'left' | 'left-start' | 'left-end';
     disabled?: boolean;
     distance?: number;

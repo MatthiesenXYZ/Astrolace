@@ -1,7 +1,7 @@
 ---
 import type { SlIconButton } from 'astrolace:types';
 
-interface Props extends Partial<SlIconButton> {
+interface Props extends Omit<SlIconButton, any> {
     name?: string;
     src?: string;
     href?: string;

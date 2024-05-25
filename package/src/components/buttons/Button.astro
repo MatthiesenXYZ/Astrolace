@@ -1,7 +1,7 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { SlButton } from '@shoelace-style/shoelace';
 
-interface Props extends Partial<HTMLAttributes<'div'>> {
+interface Props extends Omit<SlButton, any> {
     variant?: 'default' | 'primary' | 'success' | 'neutral' |'warning' | 'danger' | 'text';
     size?: 'small' | 'medium' | 'large';
     outline?: boolean;

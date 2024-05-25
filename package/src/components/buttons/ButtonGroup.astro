@@ -1,7 +1,7 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { SlButtonGroup } from '@shoelace-style/shoelace';
 
-interface Props extends Partial<HTMLAttributes<'div'>> {
+interface Props extends Omit<SlButtonGroup, any> {
     label?: string;
 }
 

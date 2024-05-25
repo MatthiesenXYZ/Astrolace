@@ -19,7 +19,7 @@ export default defineIntegration({
 				"astro:config:setup": async (params) => {
 
 					// Destructure the parameters
-					const { logger } = params;
+					const { logger, injectScript } = params;
 
 					// Log the setup of the integration
 					integrationLogger(logger, verbose, "info", "Setting up Astrolace integration");
@@ -33,28 +33,32 @@ export default defineIntegration({
 							'astrolace:types': `export * from '${resolve('./types/index.ts')}';`,
 							'astrolace:utils': `export * from '${resolve('./tools/index.ts')}';`,
 						}
-					})
+					});
 
-					// Add the .d.ts file
+					injectScript("page-ssr", `import "${resolve('./shoelaceLib/light.css')}";`);
+					injectScript("page-ssr", `import "${resolve('./shoelaceLib/dark.css')}";`);
+					injectScript("page", `import "${resolve('./shoelaceLib/loader.js')}";`);
+
+					// Add the .d.ts files
 					addDts(params, {
 						name: 'astrolace-components-header',
 						content: componentHeaderFile
-					})
+					});
 
 					addDts(params, {
 						name: 'astrolace-components',
 						content: componentFile
-					})
+					});
 
 					addDts(params, {
 						name: 'astrolace-types',
 						content: typesFile
-					})
+					});
 
 					addDts(params, {
 						name: 'astrolace-tools',
 						content: toolsFile
-					})
+					});
 				},
 			},
 		};
