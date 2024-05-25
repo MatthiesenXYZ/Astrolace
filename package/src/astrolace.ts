@@ -51,6 +51,13 @@ export default defineIntegration({
 						IconButton: resolve('./components/icon/IconButton.astro'),
 						ImageComparer: resolve('./components/ImageComparer.astro'),
 						Include: resolve('./components/Include.astro'),
+						Input: resolve('./components/Input.astro'),
+						Menu: resolve('./components/menu/Menu.astro'),
+						MenuItem: resolve('./components/menu/MenuItem.astro'),
+						MenuLabel: resolve('./components/menu/MenuLabel.astro'),
+						MutationObserver: resolve('./components/MutationObserver.astro'),
+						Option: resolve('./components/select/Option.astro'),
+						Select: resolve('./components/select/Select.astro'),
 						Tooltip: resolve('./components/Tooltip.astro'),
 					};
 
@@ -75,7 +82,7 @@ export default defineIntegration({
 							'astrolace:components': astrolaceComponents,
 							'astrolace:components/header': astrolaceComponentsHeader,
 							'astrolace:types': `export * from '${resolve('./types/index.ts')}';`,
-							'astrolace:utils': `export * from '${resolve('./tools/index.ts')}';`,
+							'astrolace:tools': `export * from '${resolve('./tools/index.ts')}';`,
 						}
 					});
 

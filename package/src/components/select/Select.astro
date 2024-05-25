@@ -1,0 +1,98 @@
+---
+import type { SlSelect } from '@shoelace-style/shoelace';
+
+
+interface Props extends Omit<SlSelect, any> {
+    /** The name of the select, submitted as a name/value pair with form data. */
+    name: string;
+    /**
+     * The current value of the select, submitted as a name/value pair with form data. When `multiple` is enabled, the
+     * value attribute will be a space-delimited list of values based on the options selected, and the value property will
+     * be an array. **For this reason, values must not contain spaces.**
+     */
+    value?: string | string[];
+    /** The default value of the form control. Primarily used for resetting the form control. */
+    defaultValue?: string | string[];
+    /** The select's size. */
+    size?: 'small' | 'medium' | 'large';
+    /** Placeholder text to show as a hint when the select is empty. */
+    placeholder?: string;
+    /** Allows more than one option to be selected. */
+    multiple?: boolean;
+    /**
+     * The maximum number of selected options to show when `multiple` is true. After the maximum, "+n" will be shown to
+     * indicate the number of additional items that are selected. Set to 0 to remove the limit.
+     */
+    maxOptionsVisible?: number;
+    /** Disables the select control. */
+    disabled?: boolean;
+    /** Adds a clear button when the select is not empty. */
+    clearable?: boolean;
+    /**
+     * Indicates whether or not the select is open. You can toggle this attribute to show and hide the menu, or you can
+     * use the `show()` and `hide()` methods and this attribute will reflect the select's open state.
+     */
+    open?: boolean;
+    /**
+     * Enable this option to prevent the listbox from being clipped when the component is placed inside a container with
+     * `overflow: auto|scroll`. Hoisting uses a fixed positioning strategy that works in many, but not all, scenarios.
+     */
+    hoist?: boolean;
+    /** Draws a filled select. */
+    filled?: boolean;
+    /** Draws a pill-style select with rounded edges. */
+    pill?: boolean;
+    /** The select's label. If you need to display HTML, use the `label` slot instead. */
+    label?: string;
+    /**
+     * The preferred placement of the select's menu. Note that the actual placement may vary as needed to keep the listbox
+     * inside of the viewport.
+     */
+    placement?: 'top' | 'bottom';
+    /** The select's help text. If you need to display HTML, use the `help-text` slot instead. */
+    helpText?: string;
+    /**
+     * By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+     * to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+     * the same document or shadow root for this to work.
+     */
+    form?: string;
+    /** The select's required attribute. */
+    required?: boolean;
+}
+
+const { 
+    clearable, defaultValue, disabled, filled, form, 
+    helpText, hoist, label, maxOptionsVisible, multiple, 
+    name, open, pill, placeholder, placement, required, 
+    size, value, ...rest
+ } = Astro.props;
+---
+
+<sl-select
+    {clearable}
+    {defaultValue}
+    {disabled}
+    {filled}
+    {form}
+    {helpText}
+    {hoist}
+    {label}
+    {maxOptionsVisible}
+    {multiple}
+    {name}
+    {open}
+    {pill}
+    {placeholder}
+    {placement}
+    {required}
+    {size}
+    {value}
+    {...rest}
+    >
+    <slot />
+</sl-select>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/select/select.js';
+</script>

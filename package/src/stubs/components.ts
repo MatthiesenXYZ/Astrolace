@@ -331,8 +331,113 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} allowScripts - Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks.
      */
     export const Include: typeof import('${resolve('../components/Include.astro')}').default;
+    /**
+     * Shoelace.style <sl-input> component
+     * 
+     * @see https://shoelace.style/components/input
+     * 
+     * @param {string} type - The type of the input. Can be 'date', 'datetime-local', 'email', 'number', 'password', 'search', 'tel', 'text', 'time', 'url'.
+     * @param {string} name - The name of the input, submitted as a name/value pair with form data.
+     * @param {string} value - The current value of the input, submitted as a name/value pair with form data.
+     * @param {string} defaultValue - The default value of the form control. Primarily used for resetting the form control.
+     * @param {string} size - The input's size. Can be 'small', 'medium', 'large'.
+     * @param {boolean} filled - Draws a filled input.
+     * @param {boolean} pill - Draws a pill-style input with rounded edges.
+     * @param {string} label - The input's label. If you need to display HTML, use the 'label' slot instead.
+     * @param {string} helpText - The input's help text. If you need to display HTML, use the 'help-text' slot instead.
+     * @param {boolean} clearable - Adds a clear button when the input is not empty.
+     * @param {boolean} disabled - Disables the input.
+     * @param {string} placeholder - Placeholder text to show as a hint when the input is empty.
+     * @param {boolean} readonly - Makes the input readonly.
+     * @param {boolean} passwordToggle - Adds a button to toggle the password's visibility. Only applies to password types.
+     * @param {string} pattern - A regular expression that the value must match to pass validation.
+     * @param {string} min - The minimum value of the input.
+     * @param {string} max - The maximum value of the input.
+     * @param {string} form - The id of the form that the input is associated with.
+     * @param {boolean} required - Makes the input a required field.
+     * @param {number} minlength - The minimum length of input that will be considered valid.
+     * @param {number} maxlength - The maximum length of input that will be considered valid.
+     * @param {string} autocomplete - The input's autocomplete attribute.
+     * @param {string} autocapitalize - The input's autocapitalize attribute.
+     * @param {string} autocorrect - The input's autocorrect attribute.
+     * @param {string} spellcheck - The input's spellcheck attribute.
+     * @param {string} inputmode - The input's inputmode attribute.
+     */
+    export const Input: typeof import('${resolve('../components/Input.astro')}').default;
+    /**
+     * Shoelace.style <sl-menu> component
+     * 
+     * @see https://shoelace.style/components/menu
+     */
+    export const Menu: typeof import('${resolve('../components/menu/Menu.astro')}').default;
+    /**
+     * Shoelace.style <sl-menu-item> component
+     * 
+     * @see https://shoelace.style/components/menu-item
+     * 
+     * @param {string} type - The type of menu item to render. To use 'checked', this value must be set to 'checkbox'.
+     * @param {boolean} checked - Draws the item in a checked state.
+     * @param {string} value - A unique value to store in the menu item. This can be used as a way to identify menu items when selected.
+     * @param {boolean} loading - Draws the menu item in a loading state.
+     * @param {boolean} disabled - Draws the menu item in a disabled state, preventing selection.
+     */
+    export const MenuItem: typeof import('${resolve('../components/menu/MenuItem.astro')}').default;
+    /**
+     * Shoelace.style <sl-menu-label> component
+     * 
+     * @see https://shoelace.style/components/menu-label
+     */
+    export const MenuLabel: typeof import('${resolve('../components/menu/MenuLabel.astro')}').default;
+    /**
+     * Shoelace.style <sl-mutation-observer> component
+     * 
+     * @see https://shoelace.style/components/mutation-observer
+     * 
+     * @param {string} attr - Watches for changes to attributes. To watch only specific attributes, separate them by a space, e.g. 'attr="class id title"'. To watch all attributes, use '*'.
+     * @param {boolean} attrOldValue - Indicates whether or not the attribute's previous value should be recorded when monitoring changes.
+     * @param {boolean} charData - Watches for changes to the character data contained within the node.
+     * @param {boolean} charDataOldValue - Indicates whether or not the previous value of the node's text should be recorded.
+     * @param {boolean} childList - Watches for the addition or removal of new child nodes.
+     * @param {boolean} disabled - Disables the observer.
+     */
+    export const MutationObserver: typeof import('${resolve('../components/MutationObserver.astro')}').default;
+    /**
+     * Shoelace.style <sl-option> component
+     * 
+     * @see https://shoelace.style/components/option
+     * 
+     * @param {string} value - The value of the option.
+     * @param {boolean} disabled - Disables the option.
+     */
+    export const Option: typeof import('${resolve('../components/select/Option.astro')}').default;
 
     
+
+    /**
+     * Shoelace.style <sl-select> component
+     * 
+     * @see https://shoelace.style/components/select
+     * 
+     * @param {string} name - The name of the select, submitted as a name/value pair with form data.
+     * @param {string} value - The current value of the select, submitted as a name/value pair with form data. When 'multiple' is enabled, the value attribute will be a space-delimited list of values based on the options selected, and the value property will be an array. **For this reason, values must not contain spaces.**
+     * @param {string} defaultValue - The default value of the form control. Primarily used for resetting the form control.
+     * @param {string} size - The select's size. Can be 'small', 'medium', 'large'.
+     * @param {string} placeholder - Placeholder text to show as a hint when the select is empty.
+     * @param {boolean} multiple - Allows more than one option to be selected.
+     * @param {number} maxOptionsVisible - The maximum number of selected options to show when 'multiple' is true. After the maximum, "+n" will be shown to indicate the number of additional items that are selected. Set to 0 to remove the limit.
+     * @param {boolean} disabled - Disables the select control.
+     * @param {boolean} clearable - Adds a clear button when the select is not empty.
+     * @param {boolean} open - Indicates whether or not the select is open. You can toggle this attribute to show and hide the menu, or you can use the 'show()' and 'hide()' methods and this attribute will reflect the select's open state.
+     * @param {boolean} hoist - Whether the select should be hoisted to the body to avoid clipping issues.
+     * @param {boolean} required - Makes the select a required field.
+     * @param {string} helpText - The select's help text. If you need to display HTML, use the 'help-text' slot instead.
+     * @param {string} form - The id of the form that the select is associated with.
+     * @param {string} label - The select's label. If you need to display HTML, use the 'label' slot instead.
+     * @param {string} placement - The preferred placement of the select's menu. Note that the actual placement may vary as needed to keep the listbox inside of the viewport.
+     */
+    export const Select: typeof import('${resolve('../components/select/Select.astro')}').default;
+
+
 
     /**
      * Shoelace.style <sl-tooltip> component

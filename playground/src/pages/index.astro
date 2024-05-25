@@ -6,7 +6,10 @@ import {
 	Card, Carousel, CarouselItem, Checkbox, ColorPicker, CopyButton,
 	Details, Divider, Dialog, Drawer, Dropdown,
 	FormatBytes, FormatDate, FormatNumber,
-	Icon, IconButton, ImageComparer, Include, 
+	Icon, IconButton, ImageComparer, Include, Input,
+	Menu, MenuItem, MenuLabel, MutationObserver,
+	Option,
+	Select,
 	Tooltip 
 } from "astrolace:components";
 
@@ -175,6 +178,39 @@ import {
 		</div>
 
 		<Divider />
+
+		<div>
+			<h2>Input</h2>
+			<Input name="test-input" placeholder="Hello!" />
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Menu</h2>
+			<Menu>
+				<MenuLabel>First Test Label</MenuLabel>
+				<MenuItem >Test Item 1</MenuItem>
+				<MenuItem>Test Item 2</MenuItem>
+				<Divider />
+				<MenuLabel>Second Test Label</MenuLabel>
+				<MenuItem>Test Item 3</MenuItem>
+			</Menu>
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Select and Options</h2>
+			<Select name="test-select">
+				<Option value="1">Test Option 1</Option>
+				<Option value="2">Test Option 2</Option>
+				<Option value="3">Test Option 3</Option>
+			</Select>
+		</div>
+
+		<Divider />
+
 
 	</body>
 </html>

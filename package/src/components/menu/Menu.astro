@@ -1,0 +1,11 @@
+---
+const { ...rest } = Astro.props;
+---
+
+<sl-menu {...rest}>
+    <slot />
+</sl-menu>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/menu/menu.js';
+</script>

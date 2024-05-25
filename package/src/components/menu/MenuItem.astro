@@ -1,0 +1,34 @@
+---
+import type { SlMenuItem } from '@shoelace-style/shoelace';
+
+
+interface Props extends Omit<SlMenuItem, any> {
+    /** The type of menu item to render. To use `checked`, this value must be set to `checkbox`. */
+    type?: 'normal' | 'checkbox';
+    /** Draws the item in a checked state. */
+    checked?: boolean;
+    /** A unique value to store in the menu item. This can be used as a way to identify menu items when selected. */
+    value?: string;
+    /** Draws the menu item in a loading state. */
+    loading?: boolean;
+    /** Draws the menu item in a disabled state, preventing selection. */
+    disabled?: boolean;
+}
+
+const { checked, disabled, loading, type = "normal", value, ...rest } = Astro.props;
+---
+
+<sl-menu-item
+    {checked}
+    {disabled}
+    {loading}
+    {type}
+    {value}
+    {...rest}
+    >
+    <slot />
+</sl-menu-item>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/menu-item/menu-item.js';
+</script>
