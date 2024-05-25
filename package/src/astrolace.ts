@@ -24,11 +24,46 @@ export default defineIntegration({
 					// Log the setup of the integration
 					integrationLogger(logger, verbose, "info", "Setting up Astrolace integration");
 
+					const virtualComponents = {
+						Alert: resolve('./components/Alert.astro'),
+						AnimatedImage: resolve('./components/AnimatedImage.astro'),
+						Avatar: resolve('./components/Avatar.astro'),
+						Badge: resolve('./components/Badge.astro'),
+						Breadcrumb: resolve('./components/breadcrumbs/Breadcrumb.astro'),
+						BreadcrumbItem: resolve('./components/breadcrumbs/BreadcrumbItem.astro'),
+						Button: resolve('./components/buttons/Button.astro'),
+						ButtonGroup: resolve('./components/buttons/ButtonGroup.astro'),
+						CopyButton: resolve('./components/buttons/CopyButton.astro'),
+						Card: resolve('./components/Card.astro'),
+						Carousel: resolve('./components/carousel/Carousel.astro'),
+						CarouselItem: resolve('./components/carousel/CarouselItem.astro'),
+						Checkbox: resolve('./components/Checkbox.astro'),
+						ColorPicker: resolve('./components/ColorPicker.astro'),
+						Details: resolve('./components/Details.astro'),
+						Dialog: resolve('./components/Dialog.astro'),
+						Divider: resolve('./components/Divider.astro'),
+						Drawer: resolve('./components/Drawer.astro'),
+						Dropdown: resolve('./components/Dropdown.astro'),
+						FormatBytes: resolve('./components/formatters/FormatBytes.astro'),
+						FormatDate: resolve('./components/formatters/FormatDate.astro'),
+						FormatNumber: resolve('./components/formatters/FormatNumber.astro'),
+						Icon: resolve('./components/icon/Icon.astro'),
+						IconButton: resolve('./components/icon/IconButton.astro'),
+						ImageComparer: resolve('./components/ImageComparer.astro'),
+						Include: resolve('./components/Include.astro'),
+						Tooltip: resolve('./components/Tooltip.astro'),
+					};
+
+					const astrolaceComponents = Object
+							.entries(virtualComponents)
+							.map(([name, path]) => `export { default as ${name} } from '${path}';`)
+							.join('\n');
+
 					// Add virtual imports
 					addVirtualImports(params, {
 						name,
 						imports: {
-							'astrolace:components': `export * from '${resolve('./components/index.ts')}';`,
+							'astrolace:components': astrolaceComponents,
 							'astrolace:components/header': `export * from '${resolve('./components/header/index.ts')}';`,
 							'astrolace:types': `export * from '${resolve('./types/index.ts')}';`,
 							'astrolace:utils': `export * from '${resolve('./tools/index.ts')}';`,
