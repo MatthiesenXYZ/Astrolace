@@ -15,7 +15,7 @@
 		"@matthiesenxyz/astrolace": "workspace:*"
 	},
 	"devDependencies": {
-		"@types/node": "^20.12.12",
+		"@types/node": "^20.14.2",
 		"typescript": "^5.4.5"
 	}
 }
