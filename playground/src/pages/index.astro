@@ -8,7 +8,8 @@ import {
 	FormatBytes, FormatDate, FormatNumber,
 	Icon, IconButton, ImageComparer, Include, Input,
 	Menu, MenuItem, MenuLabel, MutationObserver,
-	Option,
+	Option, Popup, ProgressBar, ProgressRing, QrCode,
+	Radio, RadioButton, RadioGroup, Range, Rating,
 	Select,
 	Tooltip 
 } from "astrolace:components";
@@ -211,6 +212,52 @@ import {
 
 		<Divider />
 
+		<div>
+			<h2>Progress Bar & Ring</h2>
+			<ProgressBar indeterminate={true} />
+			<br />
+			<ProgressRing value={50} />
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Qr Code</h2>
+			<QrCode value="https://google.com" />
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Radios, Radio Buttons, and Groups</h2>
+			<RadioGroup name="radio-basic-group" value="1">
+				<Radio value="1">Test Radio 1</Radio>
+				<Radio value="2">Test Radio 2</Radio>
+				<Radio value="3">Test Radio 3</Radio>
+			</RadioGroup>
+			<br />
+			<RadioGroup name="radio-button-group" value="1">
+				<RadioButton value="1">Test Radio 1</RadioButton>
+				<RadioButton value="2">Test Radio 2</RadioButton>
+				<RadioButton value="3">Test Radio 3</RadioButton>
+			</RadioGroup>
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Range</h2>
+			<Range min={0} max={100} value={50} />
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Rating</h2>
+			<Rating />
+		</div>
+
+		<Divider />
 
 	</body>
 </html>

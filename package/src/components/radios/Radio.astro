@@ -1,0 +1,28 @@
+---
+import type { SlRadio } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlRadio, any> {
+    /** The radio's value. When selected, the radio group will receive this value. */
+    value: string;
+    /**
+     * The radio's size. When used inside a radio group, the size will be determined by the radio group's size so this attribute can typically be omitted.
+     */
+    size?: 'small' | 'medium' | 'large';
+    /** Disables the radio. */
+    disabled?: boolean;
+}
+
+const { value, disabled, size, ...rest } = Astro.props;
+---
+<sl-radio
+    value={value}
+    {size}
+    {disabled}
+    {...rest}
+    >
+    <slot />
+</sl-radio>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/radio/radio.js';
+</script>

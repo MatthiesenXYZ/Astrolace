@@ -1,0 +1,37 @@
+---
+import type { SlQrCode } from '@shoelace-style/shoelace'
+
+interface Props extends Omit<SlQrCode, any> {
+    /** The QR code's value. */
+    value: string;
+    /** The label for assistive devices to announce. If unspecified, the value will be used instead. */
+    label?: string;
+    /** The size of the QR code, in pixels. */
+    size?: number;
+    /** The fill color. This can be any valid CSS color, but not a CSS custom property. */
+    fill?: string;
+    /** The background color. This can be any valid CSS color or `transparent`. It cannot be a CSS custom property. */
+    background?: string;
+    /** The edge radius of each module. Must be between 0 and 0.5. */
+    radius?: number;
+    /** The level of error correction to use. [Learn more](https://www.qrcode.com/en/about/error_correction.html) */
+    errorCorrection?: 'L' | 'M' | 'Q' | 'H';
+}
+
+const { value, background, errorCorrection, fill, label, radius, size, ...rest } = Astro.props;
+---
+<sl-qr-code
+    value={value}
+    {label}
+    {size}
+    {fill}
+    {background}
+    {radius}
+    {errorCorrection}
+    {...rest}
+    >
+</sl-qr-code>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/qr-code/qr-code.js';
+</script>

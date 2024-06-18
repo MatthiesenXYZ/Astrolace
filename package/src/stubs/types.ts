@@ -63,6 +63,7 @@ typesDTS.addLines(`declare module 'astrolace:types' {
     export type SlTree = import('${resolve('../types/index.ts')}').SlTree;
     export type SlTreeItem = import('${resolve('../types/index.ts')}').SlTreeItem;
     export type SlVisuallyHidden = import('${resolve('../types/index.ts')}').SlVisuallyHidden;
+    export type VirtualElement = import('${resolve('../types/index.ts')}').VirtualElement;
 };`);
 
 export const typesFile = typesDTS.text();

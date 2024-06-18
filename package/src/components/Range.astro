@@ -1,0 +1,61 @@
+---
+import type { SlRange } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlRange, any> {
+    /** The name of the range, submitted as a name/value pair with form data. */
+    name?: string;
+    /** The current value of the range, submitted as a name/value pair with form data. */
+    value?: number;
+    /** The range's label. If you need to display HTML, use the `label` slot instead. */
+    label?: string;
+    /** The range's help text. If you need to display HTML, use the help-text slot instead. */
+    helpText?: string;
+    /** Disables the range. */
+    disabled?: boolean;
+    /** The minimum acceptable value of the range. */
+    min?: number;
+    /** The maximum acceptable value of the range. */
+    max?: number;
+    /** The interval at which the range will increase and decrease. */
+    step?: number;
+    /** The preferred placement of the range's tooltip. */
+    tooltip?: 'top' | 'bottom' | 'none';
+    /**
+     * A function used to format the tooltip's value. The range's value is passed as the first and only argument. The
+     * function should return a string to display in the tooltip.
+     */
+    tooltipFormatter?: (value: number) => string;
+    /**
+     * By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you
+     * to place the form control outside of a form and associate it with the form that has this `id`. The form must be in
+     * the same document or shadow root for this to work.
+     */
+    form?: string;
+    /** The default value of the form control. Primarily used for resetting the form control. */
+    defaultValue?: number;
+}
+
+const { defaultValue, disabled, form, helpText, label, max, min, name, step, tooltip, tooltipFormatter, value, ...rest } = Astro.props;
+---
+
+<sl-range
+    {defaultValue}
+    {disabled}
+    {form}
+    {helpText}
+    {label}
+    {max}
+    {min}
+    {name}
+    {step}
+    {tooltip}
+    {tooltipFormatter}
+    {value}
+    {...rest}
+    >
+    <slot />
+</sl-range>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/range/range.js';
+</script>

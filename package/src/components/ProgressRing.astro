@@ -1,0 +1,24 @@
+---
+import type { SlProgressRing } from '@shoelace-style/shoelace'
+
+interface Props extends Omit<SlProgressRing, any> {
+    /** The current progress as a percentage, 0 to 100. */
+    value?: number;
+    /** A custom label for assistive devices. */
+    label?: string;
+}
+
+const { value, label, ...rest } = Astro.props;
+---
+
+<sl-progress-ring
+    {value}
+    {label}
+    {...rest}
+    >
+    <slot />
+</sl-progress-ring>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/progress-ring/progress-ring.js';
+</script>

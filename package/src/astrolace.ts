@@ -57,8 +57,31 @@ export default defineIntegration({
 						MenuLabel: resolve('./components/menu/MenuLabel.astro'),
 						MutationObserver: resolve('./components/MutationObserver.astro'),
 						Option: resolve('./components/select/Option.astro'),
+						Popup: resolve('./components/Popup.astro'),
+						ProgressBar: resolve('./components/ProgressBar.astro'),
+						ProgressRing: resolve('./components/ProgressRing.astro'),
+						QrCode: resolve('./components/QrCode.astro'),
+						Radio: resolve('./components/radios/Radio.astro'),
+						RadioButton: resolve('./components/radios/RadioButton.astro'),
+						RadioGroup: resolve('./components/radios/RadioGroup.astro'),
+						Range: resolve('./components/Range.astro'),
+						Rating: resolve('./components/Rating.astro'),
+						// RelativeTime
+						// ResizeObserver
 						Select: resolve('./components/select/Select.astro'),
+						// Skeleton
+						// Spinner
+						// SplitPanel
+						// Switch
+						// Tab
+						// TabGroup
+						// TabPanel
+						// Tag
+						// Textarea
 						Tooltip: resolve('./components/Tooltip.astro'),
+						// Tree
+						// TreeItem
+						// VisuallyHidden
 					};
 
 					const astrolaceComponents = Object

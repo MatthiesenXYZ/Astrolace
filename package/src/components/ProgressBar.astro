@@ -1,0 +1,26 @@
+---
+import type { SlProgressBar } from '@shoelace-style/shoelace'
+
+interface Props extends Omit<SlProgressBar, any> {
+    /** The current progress as a percentage, 0 to 100. */
+    value?: number;
+    /** When true, percentage is ignored, the label is hidden, and the progress bar is drawn in an indeterminate state. */
+    indeterminate?: boolean;
+    /** A custom label for assistive devices. */
+    label?: string;
+}
+
+const { value, indeterminate, label, ...rest } = Astro.props;
+---
+<sl-progress-bar 
+    {value}
+    {indeterminate}
+    {label}
+    {...rest}
+    >
+    <slot />
+</sl-progress-bar>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/progress-bar/progress-bar.js';
+</script>

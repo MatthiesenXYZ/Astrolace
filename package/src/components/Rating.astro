@@ -1,0 +1,41 @@
+---
+import type { SlRating } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlRating, any> {
+    /** A label that describes the rating to assistive devices. */
+    label?: string;
+    /** The current rating. */
+    value?: number;
+    /** The highest rating to show. */
+    max?: number;
+    /**
+     * The precision at which the rating will increase and decrease. For example, to allow half-star ratings, set this ttribute to `0.5`.
+     */
+    precision?: number;
+    /** Makes the rating readonly. */
+    readonly?: boolean;
+    /** Disables the rating. */
+    disabled?: boolean;
+    /**
+     * A function that customizes the symbol to be rendered. The first and only argument is the rating's current value.
+     * The function should return a string containing trusted HTML of the symbol to render at the specified value. Works
+     * well with `<sl-icon>` elements.
+     */
+    getSymbol?: (value: number) => string;
+}
+
+const { disabled, label, max, precision, readonly, value } = Astro.props;
+---
+<sl-rating
+    {disabled}
+    {label}
+    {max}
+    {precision}
+    {readonly}
+    {value}
+    >
+</sl-rating>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/rating/rating.js';
+</script>

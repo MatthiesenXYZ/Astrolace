@@ -5,6 +5,9 @@ const { resolve } = createResolver(import.meta.url);
 const componentsDTS = fileFactory();
 
 componentsDTS.addLines(`declare module 'astrolace:components' {
+
+    import type { VirtualElement } from 'astrolace:types';
+
     /** 
      * Shoelace.style <sl-alert> component
      * 
@@ -16,6 +19,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {number} duration - The duration of the alert in milliseconds.
      */
     export const Alert: typeof import('${resolve('../components/Alert.astro')}').default;
+
     /**
      * Shoelace.style <sl-animated-image> component
      * 
@@ -29,6 +33,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {object} slots.pauseIcon - The icon to display when the image is playing. (SlIcon name | default: 'pause')
      */
     export const AnimatedImage: typeof import('${resolve('../components/AnimatedImage.astro')}').default;
+
     /**
      * Shoelace.style <sl-avatar> component
      * 
@@ -42,6 +47,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} defaultImage - The sl-icon to display when no image is provided or the image fails to load. 
      */
     export const Avatar: typeof import('${resolve('../components/Avatar.astro')}').default;
+
     /**
      * Shoelace.style <sl-badge> component
      * 
@@ -52,12 +58,14 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} pulse - Whether the badge is pulsing or not.
      */
     export const Badge: typeof import('${resolve('../components/Badge.astro')}').default;
+
     /**
      * Shoelace.style <sl-breadcrumb> component
      * 
      * @see https://shoelace.style/components/breadcrumb
      */
     export const Breadcrumb: typeof import('${resolve('../components/breadcrumbs/Breadcrumb.astro')}').default;
+
     /**
      * Shoelace.style <sl-breadcrumb-item> component
      * 
@@ -68,6 +76,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} rel - The rel attribute to use on the link. Only used when href is set.
      */
     export const BreadcrumbItem: typeof import('${resolve('../components/breadcrumbs/BreadcrumbItem.astro')}').default;
+
     /**
      * Shoelace.style <sl-button> component
      * 
@@ -90,6 +99,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} rel - When using href, this attribute will map to the underlying links rel attribute. Unlike regular links, the default is noreferrer noopener to prevent security exploits. However, if youre using target to point to a specific tab/window, this will prevent that from working correctly. You can remove or change the default value by setting the attribute to an empty string or a value of your choice, respectively.
      */
     export const Button: typeof import('${resolve('../components/buttons/Button.astro')}').default;
+
     /**
      * Shoelace.style <sl-button-group> component
      * 
@@ -98,12 +108,14 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} label - The label of the button group.
      */
     export const ButtonGroup: typeof import('${resolve('../components/buttons/ButtonGroup.astro')}').default;
+
     /**
      * Shoelace.style <sl-card> component
      * 
      * @see https://shoelace.style/components/card
      */
     export const Card: typeof import('${resolve('../components/Card.astro')}').default;
+
     /**
      * Shoelace.style <sl-carousel> component
      * 
@@ -120,12 +132,14 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} mouseDragging - Whether the carousel should be draggable with the mouse or not.
      */
     export const Carousel: typeof import('${resolve('../components/carousel/Carousel.astro')}').default;
+
     /**
      * Shoelace.style <sl-carousel-item> component
      * 
      * @see https://shoelace.style/components/carousel-item 
      */
     export const CarouselItem: typeof import('${resolve('../components/carousel/CarouselItem.astro')}').default;
+    
     /**
      * Shoelace.style <sl-checkbox> component
      * 
@@ -144,6 +158,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @slot {default} - The checkbox's label.
      */
     export const Checkbox: typeof import('${resolve('../components/Checkbox.astro')}').default;
+
     /**
      * Shoelace.style <sl-color-picker> component
      * 
@@ -166,6 +181,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} required - Whether the color picker is required or not.
      */
     export const ColorPicker: typeof import('${resolve('../components/ColorPicker.astro')}').default;
+
     /**
      * Shoelace.style <sl-copy-button> component
      * 
@@ -182,6 +198,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} hoist - Whether the copy button should be hoisted to the body to avoid clipping issues.
      */
     export const CopyButton: typeof import('${resolve('../components/buttons/CopyButton.astro')}').default;
+
     /**
      * Shoelace.style <sl-details> component
      * 
@@ -192,6 +209,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} disabled - Whether the details is disabled or not.
      */
     export const Details: typeof import('${resolve('../components/Details.astro')}').default;
+
     /**
      * Shoelace.style <sl-dialog> component
      * 
@@ -203,6 +221,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} id - The id of the dialog.
      */
     export const Dialog: typeof import('${resolve('../components/Dialog.astro')}').default;
+
     /**
      * Shoelace.style <sl-divider> component
      * 
@@ -211,6 +230,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} vertical - Whether the divider is vertical or not.
      */
     export const Divider: typeof import('${resolve('../components/Divider.astro')}').default;
+
     /**
      * Shoelace.style <sl-drawer> component
      * 
@@ -223,6 +243,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} contained - Whether the drawer is contained or not.
      */
     export const Drawer: typeof import('${resolve('../components/Drawer.astro')}').default;
+
     /**
      * Shoelace.style <sl-dropdown> component
      * 
@@ -239,6 +260,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} sync - Syncs the width of the dropdown with the trigger. can be 'width', 'height', 'both', 'undefined'.
      */
     export const Dropdown: typeof import('${resolve('../components/Dropdown.astro')}').default;
+
     /**
      * Shoelace.style <sl-format-bytes> component
      * 
@@ -250,6 +272,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} lang - The language to use when formatting the number.
      */
     export const FormatBytes: typeof import('${resolve('../components/formatters/FormatBytes.astro')}').default;
+
     /**
      * Shoelace.style <sl-format-date> component
      * 
@@ -270,6 +293,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} hourFormat - The hour format to use when formatting the date. Can be 'auto', '12', '24'.
      */
     export const FormatDate: typeof import('${resolve('../components/formatters/FormatDate.astro')}').default;
+
     /**
      * Shoelace.style <sl-format-number> component
      * 
@@ -288,6 +312,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} lang - The language to use when formatting the number.
      */
     export const FormatNumber: typeof import('${resolve('../components/formatters/FormatNumber.astro')}').default;
+
     /**
      * Shoelace.style <sl-icon> component
      * 
@@ -299,6 +324,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} label - The accessible label of the icon.
      */
     export const Icon: typeof import('${resolve('../components/icon/Icon.astro')}').default;
+
     /**
      * Shoelace.style <sl-icon-button> component
      * 
@@ -313,6 +339,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} disabled - Whether the icon is disabled or not.
      */
     export const IconButton: typeof import('${resolve('../components/icon/IconButton.astro')}').default;
+
     /**
      * Shoelace.style <sl-image-comparer> component
      * 
@@ -321,6 +348,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} position - The position of the divider as a percentage.
      */
     export const ImageComparer: typeof import('${resolve('../components/ImageComparer.astro')}').default;
+
     /**
      * Shoelace.style <sl-include> component
      * 
@@ -331,6 +359,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} allowScripts - Allows included scripts to be executed. Be sure you trust the content you are including as it will be executed as code and can result in XSS attacks.
      */
     export const Include: typeof import('${resolve('../components/Include.astro')}').default;
+
     /**
      * Shoelace.style <sl-input> component
      * 
@@ -364,12 +393,14 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {string} inputmode - The input's inputmode attribute.
      */
     export const Input: typeof import('${resolve('../components/Input.astro')}').default;
+
     /**
      * Shoelace.style <sl-menu> component
      * 
      * @see https://shoelace.style/components/menu
      */
     export const Menu: typeof import('${resolve('../components/menu/Menu.astro')}').default;
+
     /**
      * Shoelace.style <sl-menu-item> component
      * 
@@ -382,12 +413,14 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} disabled - Draws the menu item in a disabled state, preventing selection.
      */
     export const MenuItem: typeof import('${resolve('../components/menu/MenuItem.astro')}').default;
+
     /**
      * Shoelace.style <sl-menu-label> component
      * 
      * @see https://shoelace.style/components/menu-label
      */
     export const MenuLabel: typeof import('${resolve('../components/menu/MenuLabel.astro')}').default;
+
     /**
      * Shoelace.style <sl-mutation-observer> component
      * 
@@ -401,6 +434,7 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @param {boolean} disabled - Disables the observer.
      */
     export const MutationObserver: typeof import('${resolve('../components/MutationObserver.astro')}').default;
+
     /**
      * Shoelace.style <sl-option> component
      * 
@@ -411,7 +445,135 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      */
     export const Option: typeof import('${resolve('../components/select/Option.astro')}').default;
 
+    /**
+     * Shoelace.style <sl-popup> component
+     * 
+     * @see https://shoelace.style/components/popup
+     * 
+     * @param {HTMLElement} popup - A reference to the internal popup container. Useful for animating and styling the popup with JavaScript.
+     * @param {Element | string | VirtualElement} anchor - The element the popup will be anchored to. If the anchor lives outside of the popup, you can provide the anchor
+     * @param {boolean} active - Activates the positioning logic and shows the popup. When this attribute is removed, the positioning logic is torn down and the popup will be hidden.
+     * @param {string} placement - The preferred placement of the popup. Note that the actual placement may vary as needed to keep the popup inside of the viewport. Can be 'top', 'top-start', 'top-end', 'right', 'right-start', 'right-end' 'bottom', 'bottom-start', 'bottom-end', 'left', 'left-start', 'left-end'.
+     * @param {string} strategy - The strategy to use when positioning the popup. Can be 'fixed', 'absolute'.
+     * @param {number} distance - The distance the popup should be from its anchor.
+     * @param {number} skidding - The distance the popup's arrow should be from the edge of the popup.
+     * @param {boolean} arrow - Attaches an arrow to the popup.
+     * @param {string} arrowPlacement - The placement of the arrow. The default is 'anchor', which will align the arrow as close to the center of the anchor as possible, considering available space and 'arrow-padding'.
+     * @param {number} arrowPadding - The padding between the arrow and the edge of the popup.
+     * @param {boolean} flip - When set, placement of the popup will flip to the opposite site to keep it in view. You can use 'flipFallbackPlacements' to further configure how the fallback placement is determined.
+     * @param {string} flipFallbackPlacements - If the preferred placement doesn't fit, popup will be tested in these fallback placements until one fits. Must be a string of any number of placements separated by a space, e.g. "top bottom left". If no placement fits, the flip fallback strategy will be used instead.
+     * @param {string} flipFallbackStrategy - When neither the preferred placement nor the fallback placements fit, this value will be used to determine whether the popup should be positioned using the best available fit based on available space or as it was initially preferred. Can be 'best-fit' or 'initial'.
+     * @param {Element | Element[]} flipBoundary - The flip boundary describes clipping element(s) that overflow will be checked relative to when flipping.
+     * @param {number} flipPadding - The amount of padding, in pixels, to exceed before the flip behavior will occur.
+     * @param {boolean} shift - Moves the popup along the axis to keep it in view when clipped.
+     * @param {Element | Element[]} shiftBoundary - The shift boundary describes clipping element(s) that overflow will be checked relative to when shifting.
+     * @param {number} shiftPadding - The amount of padding, in pixels, to exceed before the shift behavior will occur.
+     * @param {string} autoSize - When set, this will cause the popup to automatically resize itself to prevent it from overflowing. Can be 'horizontal', 'vertical', 'both'.
+     * @param {string} sync - Syncs the popup's width or height to that of the anchor element. Can be 'width', 'height', 'both'.
+     * @param {Element | Element[]} autoSizeBoundary - The auto-size boundary describes clipping element(s) that overflow will be checked relative to when resizing.
+     * @param {number} autoSizePadding - The amount of padding, in pixels, to exceed before the auto-size behavior will occur.
+     * @param {boolean} hoverBridge - When a gap exists between the anchor and the popup element, this option will add a "hover bridge" that fills the gap using an invisible element.
+     */
+    export const Popup: typeof import('${resolve('../components/Popup.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-progress-bar> component
+     * 
+     * @see https://shoelace.style/components/progress-bar
+     * 
+     * @param {number} value - The current progress as a percentage, 0 to 100.
+     * @param {boolean} indeterminate - When true, percentage is ignored, the label is hidden, and the progress bar is drawn in an indeterminate state.
+     * @param {string} label - A custom label for assistive devices.
+     */
+    export const ProgressBar: typeof import('${resolve('../components/ProgressBar.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-progress-ring> component
+     * 
+     * @see https://shoelace.style/components/progress-ring
+     * 
+     * @param {number} value - The current progress as a percentage, 0 to 100.
+     * @param {string} label - A custom label for assistive devices.
+     */
+    export const ProgressRing: typeof import('${resolve('../components/ProgressRing.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-qr-code> component
+     * 
+     * @see https://shoelace.style/components/qr-code
+     * 
+     * @param {string} value - The value of the QR code.
+     * @param {number} size - The size of the QR code in pixels.
+     * @param {string} label - The label of the QR code.
+     * @param {string} fill - The fill color. This can be any valid CSS color, but not a CSS custom property.
+     * @param {string} background - The background color. This can be any valid CSS color, but not a CSS custom property.
+     * @param {number} radius - The edge radius of each module. Must be between 0 and 0.5.
+     * @param {string} errorCorrection - The lel of correction to use. Can be 'L', 'M', 'Q', 'H'. [learn more](https://www.qrcode.com/en/about/error_correction.html)
+     */
+    export const QrCode: typeof import('${resolve('../components/QrCode.astro')}').default;
     
+    /**
+     * Shoelace.style <sl-radio> component
+     * 
+     * @see https://shoelace.style/components/radio
+     * 
+     * @param {string} value - The radio's value. When selected, the radio group will receive this value.
+     * @param {string} size - The radio's size. When used inside a radio group, the size will be determined by the radio group's size so this attribute can typically be omitted. Can be 'small', 'medium', 'large'.
+     * @param {boolean} disabled - Disables the radio.
+     */
+    export const Radio: typeof import('${resolve('../components/radios/Radio.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-radio-button> component
+     * 
+     * @see https://shoelace.style/components/radio-button
+     * 
+     * @param {string} value - The radio's value. When selected, the radio group will receive this value.
+     * @param {boolean} disabled - Disables the radio button.
+     * @param {string} size - The radio button's size. When used inside a radio group, the size will be determined by the radio group's size so this attribute can typically be omitted. Can be 'small', 'medium', 'large'.
+     * @param {boolean} pill - Draws a pill-style radio button with rounded edges.
+     */
+    export const RadioButton: typeof import('${resolve('../components/radios/RadioButton.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-radio-group> component
+     * 
+     * @see https://shoelace.style/components/radio-group
+     * 
+     * @param {string} name - The name of the radio group, submitted as a name/value pair with form data.
+     * @param {string} value - The current value of the radio group, submitted as a name/value pair with form data.
+     * @param {string} label - The radio group's label. If you need to display HTML, use the 'label' slot instead.
+     * @param {string} helpText - The radio group's help text. If you need to display HTML, use the 'help-text' slot instead.
+     * @param {string} size - The radio group's size. Can be 'small', 'medium', 'large'.
+     * @param {string} form - The id of the form that the radio group is associated with.
+     * @param {boolean} required - Makes the radio group a required field.
+     */
+    export const RadioGroup: typeof import('${resolve('../components/radios/RadioGroup.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-range> component
+     * 
+     * @see https://shoelace.style/components/range
+     */
+    export const Range: typeof import('${resolve('../components/Range.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-rating> component
+     * 
+     * @see https://shoelace.style/components/rating
+     * 
+     * @param {string} label - A label that describes the rating to assistive devices.
+     * @param {number} value - The current rating value.
+     * @param {number} max - The maximum rating value.
+     * @param {number} precision - The precision at which the rating will increase and decrease. For example, to allow half-star ratings, set this ttribute to '0.5'.
+     * @param {boolean} readonly - Makes the rating readonly.
+     * @param {boolean} disabled - Disables the rating.
+     */
+    export const Rating: typeof import('${resolve('../components/Rating.astro')}').default;
+
+    // RelativeTime
+    
+    // ResizeObserver
 
     /**
      * Shoelace.style <sl-select> component
@@ -437,7 +599,15 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      */
     export const Select: typeof import('${resolve('../components/select/Select.astro')}').default;
 
-
+    // Skeleton
+    // Spinner
+    // SplitPanel
+    // Switch
+    // Tab
+    // TabGroup
+    // TabPanel
+    // Tag
+    // Textarea
 
     /**
      * Shoelace.style <sl-tooltip> component
@@ -454,7 +624,9 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      */
     export const Tooltip: typeof import('${resolve('../components/Tooltip.astro')}').default;
 
-    
+    // Tree
+    // TreeItem
+    // VisuallyHidden
 
 };`);
 
