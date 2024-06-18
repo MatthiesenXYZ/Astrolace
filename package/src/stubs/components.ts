@@ -571,9 +571,27 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      */
     export const Rating: typeof import('${resolve('../components/Rating.astro')}').default;
 
-    // RelativeTime
+    /**
+     * Shoelace.style <sl-relative-time> component
+     * 
+     * @see https://shoelace.style/components/relative-time
+     * 
+     * @param {string} date - The date to format.
+     * @param {string} lang - The language to use when formatting the date.
+     * @param {'short' | 'narrow' | 'long'} format - The formatting style to use for the numeric representation of the time.
+     * @param {'always' | 'auto'} numeric - The formatting style to use for the numeric representation of the time.
+     * @param {boolean} sync - Keep the displayed value up to date as time passes.
+     */
+    export const RelativeTime: typeof import('${resolve('../components/RelativeTime.astro')}').default;
     
-    // ResizeObserver
+    /**
+     * Shoelace.style <sl-resize-observer> component
+     * 
+     * @see https://shoelace.style/components/resize-observer
+     * 
+     * @param {string} disabled - Disables the observer.
+     */
+    export const ResizeObserver: typeof import('${resolve('../components/ResizeObserver.astro')}').default;
 
     /**
      * Shoelace.style <sl-select> component
@@ -599,8 +617,22 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      */
     export const Select: typeof import('${resolve('../components/select/Select.astro')}').default;
 
-    // Skeleton
-    // Spinner
+    /**
+     * Shoelace.style <sl-skeleton> component
+     * 
+     * @see https://shoelace.style/components/skeleton
+     * 
+     * @param {string} effect - The type of skeleton effect to use. Can be 'pulse', 'sheen', 'none'.
+     */
+    export const Skeleton: typeof import('${resolve('../components/Skeleton.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-spinner> component
+     * 
+     * @see https://shoelace.style/components/spinner
+     */
+    export const Spinner: typeof import('${resolve('../components/Spinner.astro')}').default;
+    
     // SplitPanel
     // Switch
     // Tab

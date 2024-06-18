@@ -9,8 +9,8 @@ import {
 	Icon, IconButton, ImageComparer, Include, Input,
 	Menu, MenuItem, MenuLabel, MutationObserver,
 	Option, Popup, ProgressBar, ProgressRing, QrCode,
-	Radio, RadioButton, RadioGroup, Range, Rating,
-	Select,
+	Radio, RadioButton, RadioGroup, Range, Rating, RelativeTime, 
+	ResizeObserver, Select, Skeleton, Spinner,
 	Tooltip 
 } from "astrolace:components";
 
@@ -73,7 +73,7 @@ import {
 		<Divider />
 
 		<div class="sl-theme-dark">
-			<h2>Alert</h2>
+			<h2>Alert (In Darkmode!)</h2>
 			<Alert variant="success" open>
 				<Icon name="info-circle" slot="icon" />
 				Hello!
@@ -258,6 +258,65 @@ import {
 		</div>
 
 		<Divider />
+
+		<div>
+			<h2>Relative Time</h2>
+			<div>Shoelace 2 release date: <RelativeTime date="2020-07-15T09:17:00-04:00" /></div>
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Resize Observer</h2>
+			<div class="resize-observer-overview">
+				<ResizeObserver>
+					<div>Resize me!</div>
+				</ResizeObserver>
+			</div>
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Skeleton</h2>
+			<div class="skeleton-effects">
+				<Skeleton effect="none" />
+				None
+
+				<Skeleton effect="sheen" />
+				Sheen
+
+				<Skeleton effect="pulse" />
+				Pulse
+			</div>
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Spinner</h2>
+			<Spinner />
+		</div>
+
+		<Divider />
+		
+		<style>
+			.resize-observer-overview div {
+			display: flex;
+			border: solid 2px var(--sl-input-border-color);
+			align-items: center;
+			justify-content: center;
+			text-align: center;
+			padding: 4rem 2rem;
+			}
+			.skeleton-effects {
+				font-size: var(--sl-font-size-small);
+			}
+
+			.skeleton-effects sl-skeleton:not(:first-child) {
+				margin-top: 1rem;
+			}
+		</style>
 
 	</body>
 </html>

@@ -1,0 +1,26 @@
+---
+import type { SlResizeObserver } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlResizeObserver, any> {
+    /** Disables the observer. */
+    disabled?: boolean;
+}
+
+const { disabled, ...rest } = Astro.props;
+---
+<sl-resize-observer 
+    {disabled} 
+    {...rest}
+    >
+    <slot />
+</sl-resize-observer>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/resize-observer/resize-observer.js';
+    
+    const resizeObserver = document.querySelector('sl-resize-observer');
+
+    resizeObserver?.addEventListener('sl-resize', event => {
+        console.log(event.detail);
+    });
+</script>

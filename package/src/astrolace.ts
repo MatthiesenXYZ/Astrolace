@@ -66,22 +66,22 @@ export default defineIntegration({
 						RadioGroup: resolve('./components/radios/RadioGroup.astro'),
 						Range: resolve('./components/Range.astro'),
 						Rating: resolve('./components/Rating.astro'),
-						// RelativeTime
-						// ResizeObserver
+						RelativeTime: resolve('./components/RelativeTime.astro'),
+						ResizeObserver: resolve('./components/ResizeObserver.astro'),
 						Select: resolve('./components/select/Select.astro'),
-						// Skeleton
-						// Spinner
-						// SplitPanel
-						// Switch
-						// Tab
-						// TabGroup
-						// TabPanel
-						// Tag
-						// Textarea
+						Skeleton: resolve('./components/Skeleton.astro'),
+						Spinner: resolve('./components/Spinner.astro'),
+						// SplitPanel: resolve('./components/SplitPanel.astro'),
+						// Switch: resolve('./components/Switch.astro'),
+						// Tab: resolve('./components/tabs/Tab.astro'),
+						// TabGroup: resolve('./components/tabs/TabGroup.astro'),
+						// TabPanel: resolve('./components/tabs/TabPanel.astro'),
+						// Tag: resolve('./components/Tag.astro'),
+						// Textarea: resolve('./components/Textarea.astro'),
 						Tooltip: resolve('./components/Tooltip.astro'),
-						// Tree
-						// TreeItem
-						// VisuallyHidden
+						// Tree: resolve('./components/tree/Tree.astro'),
+						// TreeItem: resolve('./components/tree/TreeItem.astro'),
+						// VisuallyHidden: resolve('./components/VisuallyHidden.astro'),
 					};
 
 					const astrolaceComponents = Object
