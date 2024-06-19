@@ -60,10 +60,10 @@ import { ShoelaceHeader } from "astrolace:components/header";
 
 <html>
     <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Example</title>
-		<ShoelaceHeader />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Example</title>
+        <ShoelaceHeader />
     </head>
 </html>
 ```
@@ -73,15 +73,15 @@ import { ShoelaceHeader } from "astrolace:components/header";
 ```astro
 ---
 import { 
-	Alert, AnimatedImage, Avatar, Badge, Breadcrumb, BreadcrumbItem, 
-	ButtonGroup, Button, Card, Carousel, CarouselItem, Checkbox, 
-	ColorPicker, CopyButton, Details, Divider, Dialog, Drawer, 
-	Dropdown, FormatBytes, FormatDate, FormatNumber, Icon, IconButton,
-	ImageComparer, Include, Input, Menu, MenuItem, MenuLabel,  MutationObserver, 
-	Option, Popup, ProgressBar, ProgressRing, QrCode, Radio, RadioButton, 
-	RadioGroup, Range, Rating, RelativeTime, ResizeObserver, Select, 
-	Skeleton, Spinner, SplitPanel, Switch, Tab, TabGroup, TabPanel, 
-	Tag, Textarea, Tooltip, Tree, TreeItem, VisuallyHidden
+    Alert, AnimatedImage, Avatar, Badge, Breadcrumb, BreadcrumbItem, 
+    ButtonGroup, Button, Card, Carousel, CarouselItem, Checkbox, 
+    ColorPicker, CopyButton, Details, Divider, Dialog, Drawer, 
+    Dropdown, FormatBytes, FormatDate, FormatNumber, Icon, IconButton,
+    ImageComparer, Include, Input, Menu, MenuItem, MenuLabel,  MutationObserver, 
+    Option, Popup, ProgressBar, ProgressRing, QrCode, Radio, RadioButton, 
+    RadioGroup, Range, Rating, RelativeTime, ResizeObserver, Select, 
+    Skeleton, Spinner, SplitPanel, Switch, Tab, TabGroup, TabPanel, 
+    Tag, Textarea, Tooltip, Tree, TreeItem, VisuallyHidden
 } from "astrolace:components";
 ---
 ```
@@ -97,7 +97,7 @@ import { ShoelaceHeader } from "astrolace:components/header";
 ---
 <html>
     <head>
-		<ShoelaceHeader />
+	    <ShoelaceHeader />
         <script>
         // `registerIconLibrary` function from Shoelace.style
         import { registerIconLibrary } from "astrolace:tools";
