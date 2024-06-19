@@ -1,7 +1,13 @@
 import { z } from "astro/zod";
 
+type OptionsSchema = z.ZodObject<{
+    verbose: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
+    injectCss: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
+    injectDarkTheme: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
+}, "strip" | "passthrough">;
+
 // Options for the main Integration
-export const optionsSchema = z.object({
+export const optionsSchema: OptionsSchema = z.object({
     /**
      * Enable verbose logging
      * 
