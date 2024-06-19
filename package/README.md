@@ -97,7 +97,7 @@ import { ShoelaceHeader } from "astrolace:components/header";
 ---
 <html>
     <head>
-	    <ShoelaceHeader />
+        <ShoelaceHeader />
         <script>
         // `registerIconLibrary` function from Shoelace.style
         import { registerIconLibrary } from "astrolace:tools";
