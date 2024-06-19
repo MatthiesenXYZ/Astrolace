@@ -1,5 +1,4 @@
 import type { AstroIntegrationLogger } from "astro";
-import { AstroError } from "astro/errors";
 
 export type IntegrationLoggerOpts = { 
 	logger: AstroIntegrationLogger,
@@ -18,7 +17,6 @@ export const integrationLogger = async (
 			opts.logger.warn(message);
 		} else if (opts.type === 'error') {
 			opts.logger.error(message);
-            throw new AstroError(message);
 		}
 	}
 	if (!opts.verbose) {
@@ -26,7 +24,6 @@ export const integrationLogger = async (
 			opts.logger.warn(message);
 		} else if (opts.type === 'error') {
 			opts.logger.error(message);
-            throw new AstroError(message);
 		}
 	}
 };
