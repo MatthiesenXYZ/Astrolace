@@ -34,7 +34,8 @@
 		"astro-integration-kit": "^0.13.3",
 		"@shoelace-style/shoelace": "^2.15.1",
 		"lit": "^3.1.4",
-		"vite-plugin-static-copy": "^1.0.5"
+		"vite-plugin-static-copy": "^1.0.5",
+		"zod": "^3.23.8"
 	},
 	"devDependencies": {
 		"@types/node": "^20.14.5",

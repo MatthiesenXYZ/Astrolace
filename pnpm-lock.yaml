@@ -32,6 +32,9 @@ importers:
       vite-plugin-static-copy:
         specifier: ^1.0.5
         version: 1.0.5(vite@5.2.11(@types/node@20.14.5))
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
       '@types/node':
         specifier: ^20.14.5

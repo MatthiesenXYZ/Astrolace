@@ -1,4 +1,4 @@
-import { z } from "astro/zod";
+import { z } from "zod";
 
 type OptionsSchema = z.ZodObject<{
     verbose: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
