@@ -1,7 +1,7 @@
 {
 	"name": "@matthiesenxyz/astrolace",
 	"version": "0.1.0",
-	"description": "Bring Shoelace components to Astro",
+	"description": "An easy way to use Shoelace.style within your Astro Project!",
 	"author": {
 		"email": "adam@matthiesen.xyz",
 		"name": "Adam Matthiesen",
