@@ -1,28 +1,49 @@
 import type { AstroIntegrationLogger } from "astro";
 import { AstroError } from "astro/errors";
 
-export const integrationLogger = async (
+export type IntegrationLoggerOpts = { 
 	logger: AstroIntegrationLogger,
 	verbose: boolean,
 	type: 'info' | 'warn' | 'error',
+}
+
+export const integrationLogger = async (
+	opts: IntegrationLoggerOpts,
 	message: string
 ) => {
-	if (verbose) {
-		if (type === 'info') {
-			logger.info(message);
-		} else if (type === 'warn') {
-			logger.warn(message);
-		} else if (type === 'error') {
-			logger.error(message);
+	if (opts.verbose) {
+		if (opts.type === 'info') {
+			opts.logger.info(message);
+		} else if (opts.type === 'warn') {
+			opts.logger.warn(message);
+		} else if (opts.type === 'error') {
+			opts.logger.error(message);
             throw new AstroError(message);
 		}
 	}
-	if (!verbose) {
-		if (type === 'warn') {
-			logger.warn(message);
-		} else if (type === 'error') {
-			logger.error(message);
+	if (!opts.verbose) {
+		if (opts.type === 'warn') {
+			opts.logger.warn(message);
+		} else if (opts.type === 'error') {
+			opts.logger.error(message);
             throw new AstroError(message);
 		}
 	}
 };
+
+export type LoggerOpts = {
+	infoLogger: IntegrationLoggerOpts,
+	warnLogger: IntegrationLoggerOpts,
+	errorLogger: IntegrationLoggerOpts,
+}
+
+export const loggerOpts = (
+	logger: AstroIntegrationLogger,
+	verbose: boolean,
+): LoggerOpts => {
+	return {
+		infoLogger: { logger, verbose, type: 'info' },
+		warnLogger: { logger, verbose, type: 'warn' },
+		errorLogger: { logger, verbose, type: 'error' },
+	}
+}

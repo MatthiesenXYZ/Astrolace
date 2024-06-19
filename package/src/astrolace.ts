@@ -1,24 +1,26 @@
 import { addDts, addVirtualImports, createResolver, defineIntegration } from "astro-integration-kit";
-import { integrationLogger, makeComponentMap } from "./utils";
+import { integrationLogger, loggerOpts, makeComponentMap } from "./utils";
 import { optionsSchema } from "./schemas";
 import { astrolaceDTSFile } from "./stubs";
+import { strings } from "./strings";
 
 export default defineIntegration({
 	name: "@matthiesenxyz/astrolace",
 	optionsSchema,
-	setup({ name, options: { verbose } }) {
+	setup({ name, options: { verbose, injectCss, injectDarkTheme } }) {
 		// Resolve the path to root of the integration
 		const { resolve } = createResolver(import.meta.url);
 		return {
 			hooks: {
 				"astro:config:setup": async (params) => {
 
-					// Destructure the parameters
-					const { logger, injectScript } = params;
+					// Get the logger options
+					const { infoLogger } = loggerOpts(params.logger, verbose);
 
 					// Log the setup of the integration
-					integrationLogger(logger, verbose, "info", "Setting up Astrolace integration");
+					integrationLogger(infoLogger, strings.start);
 
+					// Virtual component map
 					const virtualComponents = {
 						Alert: resolve('./components/Alert.astro'),
 						AnimatedImage: resolve('./components/AnimatedImage.astro'),
@@ -80,7 +82,7 @@ export default defineIntegration({
 					};
 
 					// Add virtual imports
-					integrationLogger(logger, verbose, "info", "Adding virtual mappings for components: 'astrolace:components', 'astrolace:types', and 'astrolace:tools'");
+					integrationLogger(infoLogger, strings.virtualImports);
 					addVirtualImports(params, {
 						name,
 						imports: {
@@ -92,16 +94,21 @@ export default defineIntegration({
 					});
 
 					// Inject the CSS
-					integrationLogger(logger, verbose, "info", "Injecting CSS for Shoelace components");
-					injectScript("page-ssr", `import "${resolve('./shoelaceLib/light.css')}";`);
-					injectScript("page-ssr", `import "${resolve('./shoelaceLib/dark.css')}";`);
+					if (injectCss) {
+						integrationLogger(infoLogger, strings.injectCss);
+						params.injectScript("page-ssr", `import "@matthiesenxyz/astrolace/base.css";`);
+						if (injectDarkTheme) {
+							integrationLogger(infoLogger, strings.injectDarkTheme);
+							params.injectScript("page-ssr", `import "@matthiesenxyz/astrolace/dark.css";`);
+						}
+					}
 
-					// Add the .d.ts files
-					integrationLogger(logger, verbose, "info", "Verifing .d.ts files for 'astrolace'");
+					// Add the `.d.ts` files
+					integrationLogger(infoLogger, strings.dts);
 					addDts(params, { name, content: astrolaceDTSFile });
 
 					// Log the setup of the integration
-					integrationLogger(logger, verbose, "info", "Astrolace integration setup complete");
+					integrationLogger(infoLogger, strings.complete);
 				},
 			},
 		};

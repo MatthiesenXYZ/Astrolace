@@ -784,9 +784,9 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      */
     export const VisuallyHidden: typeof import('${resolve('../components/VisuallyHidden.astro')}').default;
 
-};`);
+};
 
-componentsDTS.addLines(`declare module 'astrolace:components/header' {
+declare module 'astrolace:components/header' {
     /** 
      * Shoelace.style header component.
      * 
@@ -803,6 +803,7 @@ componentsDTS.addLines(`declare module 'astrolace:components/header' {
      * </html>
     */
     export const ShoelaceHeader: typeof import('${resolve('../components/header/ShoelaceHeader.astro')}').default;
-};`);
+};
+`);
 
 export const componentFile = componentsDTS.text();

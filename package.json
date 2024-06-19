@@ -9,11 +9,13 @@
 		"playground:dev": "pnpm --filter playground dev",
 		"playground:build": "pnpm --filter playground build",
 		"changeset": "changeset",
+		"ci:version": "pnpm changeset version",
+		"ci:publish": "pnpm changeset publish",
 		"lint": "biome check .",
 		"lint:fix": "biome check --apply ."
 	},
 	"devDependencies": {
-		"@biomejs/biome": "1.7.3",
-		"@changesets/cli": "^2.27.2"
+		"@biomejs/biome": "1.8.1",
+		"@changesets/cli": "^2.27.5"
 	}
 }

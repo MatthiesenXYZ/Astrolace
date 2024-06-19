@@ -5,8 +5,8 @@ import { toolsFile } from './tools.ts';
 
 const astrolaceDTS = fileFactory();
 
-astrolaceDTS.addLines(componentFile);
 astrolaceDTS.addLines(typesFile);
 astrolaceDTS.addLines(toolsFile);
+astrolaceDTS.addLines(componentFile);
 
 export const astrolaceDTSFile = astrolaceDTS.text();
