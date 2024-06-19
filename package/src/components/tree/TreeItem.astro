@@ -1,0 +1,39 @@
+---
+import type { SlTreeItem } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlTreeItem, any> {
+    /** Expands the tree item. */
+    expanded?: boolean;
+    /** Draws the tree item in a selected state. */
+    selected?: boolean;
+    /** Disables the tree item. */
+    disabled?: boolean;
+    /** Enables lazy loading behavior. */
+    lazy?: boolean;
+}
+
+const { disabled, expanded, lazy, selected, ...rest } = Astro.props;
+---
+<sl-tree-item
+    {disabled}
+    {expanded}
+    {lazy}
+    {selected}
+    {...rest}
+    >
+    {
+        Astro.slots.has('expand-icon') && (
+            <div slot="expand-icon"><slot name="expand-icon"/></div>
+        )
+    }
+    {
+        Astro.slots.has('collapse-icon') && (
+            <div slot="collapse-icon"><slot name="collapse-icon"/></div>
+        )
+    }
+    <slot />
+</sl-tree-item>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/tree-item/tree-item.js';
+</script>

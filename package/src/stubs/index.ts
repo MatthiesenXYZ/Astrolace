@@ -1,3 +1,12 @@
-export * from './components.ts';
-export * from './types.ts';
-export * from './tools.ts';
+import { fileFactory } from '../utils/fileFactory.ts';
+import { componentFile } from './components.ts';
+import { typesFile } from './types.ts';
+import { toolsFile } from './tools.ts';
+
+const astrolaceDTS = fileFactory();
+
+astrolaceDTS.addLines(componentFile);
+astrolaceDTS.addLines(typesFile);
+astrolaceDTS.addLines(toolsFile);
+
+export const astrolaceDTSFile = astrolaceDTS.text();

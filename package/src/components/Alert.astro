@@ -23,8 +23,10 @@ const { variant, open, closable, duration, ...rest } = Astro.props;
 ---
 
 <sl-alert {variant} {open} {closable} {duration} {...rest}>
-    <div slot="icon"><slot name="icon" /></div>
-    <slot></slot>
+    {
+        Astro.slots.has('icon') && <slot slot="icon" name="icon"/>
+    }
+    <slot />
 </sl-alert>
 
 <script>

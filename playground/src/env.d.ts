@@ -1,4 +1,5 @@
 /// <reference types="astro/client" />
+/// <reference types="../.astro/@matthiesenxyz/astrolace.d.ts" />
 /// <reference types="../.astro/astrolace-tools.d.ts" />
 /// <reference types="../.astro/astrolace-types.d.ts" />
 /// <reference types="../.astro/astrolace-components.d.ts" />

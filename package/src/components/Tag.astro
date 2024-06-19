@@ -1,0 +1,29 @@
+---
+import type { SlTag } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlTag, any> {
+    /** The tag's theme variant. */
+    variant?: 'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text';
+    /** The tag's size. */
+    size?: 'small' | 'medium' | 'large';
+    /** Draws a pill-style tag with rounded edges. */
+    pill?: boolean;
+    /** Makes the tag removable and shows a remove button. */
+    removable?: boolean;
+}
+
+const { pill, removable, size, variant, ...rest } = Astro.props;
+---
+<sl-tag
+    {pill}
+    {removable}
+    {size}
+    {variant}
+    {...rest}
+    >
+    <slot />
+</sl-tag>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/tag/tag.js';
+</script>

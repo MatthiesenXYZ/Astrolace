@@ -1,0 +1,24 @@
+---
+import type { SlTabPanel } from '@shoelace-style/shoelace';
+
+
+interface Props extends Omit<SlTabPanel, any> {
+    /** The tab panel's name. */
+    name: string;
+    /** When true, the tab panel will be shown. */
+    active?: boolean;
+}
+
+const { name, active, ...rest } = Astro.props;
+---
+<sl-tab-panel
+    name={name}
+    {active}
+    {...rest}
+    >
+    <slot />
+</sl-tab-panel>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/tab-panel/tab-panel.js';
+</script>

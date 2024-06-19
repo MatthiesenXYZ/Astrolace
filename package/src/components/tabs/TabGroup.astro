@@ -1,0 +1,31 @@
+---
+import type { SlTabGroup } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlTabGroup, any> {
+    /** The placement of the tabs. */
+    placement?: 'top' | 'bottom' | 'start' | 'end';
+    /**
+     * When set to auto, navigating tabs with the arrow keys will instantly show the corresponding tab panel. When set to manual, the tab will receive focus but will not show until the user presses spacebar or enter.
+     */
+    activation?: 'auto' | 'manual';
+    /** Disables the scroll arrows that appear when tabs overflow. */
+    noScrollControls?: boolean;
+}
+
+const { activation, noScrollControls, placement, ...rest } = Astro.props;
+---
+<sl-tab-group
+    {placement}
+    {activation}
+    {noScrollControls}
+    {...rest}
+    >
+    {
+        Astro.slots.has('nav') && <slot slot="nav" name="nav"/>
+    }
+    <slot />
+</sl-tab-group>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/tab-group/tab-group.js';
+</script>

@@ -1,17 +1,12 @@
 import { addDts, addVirtualImports, createResolver, defineIntegration } from "astro-integration-kit";
-import { integrationLogger } from "./utils";
-import { optionsSchema, } from "./schemas";
-import { componentFile, typesFile, toolsFile } from "./stubs";
+import { integrationLogger, makeComponentMap } from "./utils";
+import { optionsSchema } from "./schemas";
+import { astrolaceDTSFile } from "./stubs";
 
 export default defineIntegration({
 	name: "@matthiesenxyz/astrolace",
 	optionsSchema,
-	setup({ 
-		name,
-		options: { 
-			verbose,
-		}
-	}) {
+	setup({ name, options: { verbose } }) {
 		// Resolve the path to root of the integration
 		const { resolve } = createResolver(import.meta.url);
 		return {
@@ -71,62 +66,39 @@ export default defineIntegration({
 						Select: resolve('./components/select/Select.astro'),
 						Skeleton: resolve('./components/Skeleton.astro'),
 						Spinner: resolve('./components/Spinner.astro'),
-						// SplitPanel: resolve('./components/SplitPanel.astro'),
-						// Switch: resolve('./components/Switch.astro'),
-						// Tab: resolve('./components/tabs/Tab.astro'),
-						// TabGroup: resolve('./components/tabs/TabGroup.astro'),
-						// TabPanel: resolve('./components/tabs/TabPanel.astro'),
-						// Tag: resolve('./components/Tag.astro'),
-						// Textarea: resolve('./components/Textarea.astro'),
+						SplitPanel: resolve('./components/SplitPanel.astro'),
+						Switch: resolve('./components/Switch.astro'),
+						Tab: resolve('./components/tabs/Tab.astro'),
+						TabGroup: resolve('./components/tabs/TabGroup.astro'),
+						TabPanel: resolve('./components/tabs/TabPanel.astro'),
+						Tag: resolve('./components/Tag.astro'),
+						Textarea: resolve('./components/Textarea.astro'),
 						Tooltip: resolve('./components/Tooltip.astro'),
-						// Tree: resolve('./components/tree/Tree.astro'),
-						// TreeItem: resolve('./components/tree/TreeItem.astro'),
-						// VisuallyHidden: resolve('./components/VisuallyHidden.astro'),
+						Tree: resolve('./components/tree/Tree.astro'),
+						TreeItem: resolve('./components/tree/TreeItem.astro'),
+						VisuallyHidden: resolve('./components/VisuallyHidden.astro'),
 					};
 
-					const astrolaceComponents = Object
-							.entries(virtualComponents)
-							.map(([name, path]) => `export { default as ${name} } from '${path}';`)
-							.join('\n');
-
-					const virtualComponentsHeader = {
-						ShoelaceHeader: resolve('./components/header/ShoelaceHeader.astro'),
-					}
-
-					const astrolaceComponentsHeader = Object
-							.entries(virtualComponentsHeader)
-							.map(([name, path]) => `export { default as ${name} } from '${path}';`)
-							.join('\n');
-
 					// Add virtual imports
+					integrationLogger(logger, verbose, "info", "Adding virtual mappings for components: 'astrolace:components', 'astrolace:types', and 'astrolace:tools'");
 					addVirtualImports(params, {
 						name,
 						imports: {
-							'astrolace:components': astrolaceComponents,
-							'astrolace:components/header': astrolaceComponentsHeader,
+							'astrolace:components': makeComponentMap(virtualComponents),
+							'astrolace:components/header': `export { default as ShoelaceHeader } from '${resolve('./components/header/ShoelaceHeader.astro')}';`,
 							'astrolace:types': `export * from '${resolve('./types/index.ts')}';`,
 							'astrolace:tools': `export * from '${resolve('./tools/index.ts')}';`,
 						}
 					});
 
+					// Inject the CSS
+					integrationLogger(logger, verbose, "info", "Injecting CSS for Shoelace components");
 					injectScript("page-ssr", `import "${resolve('./shoelaceLib/light.css')}";`);
 					injectScript("page-ssr", `import "${resolve('./shoelaceLib/dark.css')}";`);
 
 					// Add the .d.ts files
-					addDts(params, {
-						name: 'astrolace-components',
-						content: componentFile
-					});
-
-					addDts(params, {
-						name: 'astrolace-types',
-						content: typesFile
-					});
-
-					addDts(params, {
-						name: 'astrolace-tools',
-						content: toolsFile
-					});
+					integrationLogger(logger, verbose, "info", "Verifing .d.ts files for 'astrolace'");
+					addDts(params, { name, content: astrolaceDTSFile });
 
 					// Log the setup of the integration
 					integrationLogger(logger, verbose, "info", "Astrolace integration setup complete");

@@ -1,0 +1,50 @@
+---
+import type { SlSplitPanel } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlSplitPanel, any> {
+    /**
+     * The current position of the divider from the primary panel's edge as a percentage 0-100. Defaults to 50% of the container's initial size.
+     */
+    position?: number;
+    /** The current position of the divider from the primary panel's edge in pixels. */
+    positionInPixels?: number;
+    /** Draws the split panel in a vertical orientation with the start and end panels stacked. */
+    vertical?: boolean;
+    /** Disables resizing. Note that the position may still change as a result of resizing the host element. */
+    disabled?: boolean;
+    /**
+     * If no primary panel is designated, both panels will resize proportionally when the host element is resized. If a primary panel is designated, it will maintain its size and the other panel will grow or shrink as needed when the host element is resized.
+     */
+    primary?: 'start' | 'end';
+    /**
+     * One or more space-separated values at which the divider should snap. Values can be in pixels or percentages, e.g. `"100px 50%"`.
+     */
+    snap?: string;
+    /** How close the divider must be to a snap point until snapping occurs. */
+    snapThreshold?: number;
+}
+
+const { disabled, position, positionInPixels, primary, snap, snapThreshold, vertical, ...rest } = Astro.props;
+
+const DividerSlot = Astro.slots.has('divider');
+---
+
+<sl-split-panel
+    {disabled}
+    {position}
+    {positionInPixels}
+    {primary}
+    {snap}
+    {snapThreshold}
+    {vertical}
+    {...rest}
+    >
+    <div slot="start"><slot name="start"/></div>
+    <div slot="end"><slot name="end"/></div>
+    { DividerSlot && <slot slot="divider" name="divider"/> }
+    <slot />
+</sl-split-panel>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/split-panel/split-panel.js';
+</script>

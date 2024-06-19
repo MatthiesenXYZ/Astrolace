@@ -1,0 +1,32 @@
+---
+import type { SlTree } from '@shoelace-style/shoelace';
+
+
+interface Props extends Omit<SlTree, any> {
+    /**
+     * The selection behavior of the tree. Single selection allows only one node to be selected at a time. Multiple displays checkboxes and allows more than one node to be selected. Leaf allows only leaf nodes to be selected.
+     */
+    selection?: 'single' | 'multiple' | 'leaf';
+}
+const { selection, ...rest } = Astro.props;
+---
+<sl-tree 
+    {selection}
+    {...rest}
+    >
+    {
+        Astro.slots.has('expand-icon') && (
+            <div slot="expand-icon"><slot name="expand-icon"/></div>
+        )
+    }
+    {
+        Astro.slots.has('collapse-icon') && (
+            <div slot="collapse-icon"><slot name="collapse-icon"/></div>
+        )
+    }
+    <slot />
+</sl-tree>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/tree/tree.js';
+</script>

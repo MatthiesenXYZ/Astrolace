@@ -1,17 +1,15 @@
 ---
 import { ShoelaceHeader } from "astrolace:components/header";
 import { 
-	Alert, AnimatedImage, Avatar,
-	Badge, Breadcrumb, BreadcrumbItem, ButtonGroup, Button,
-	Card, Carousel, CarouselItem, Checkbox, ColorPicker, CopyButton,
-	Details, Divider, Dialog, Drawer, Dropdown,
-	FormatBytes, FormatDate, FormatNumber,
-	Icon, IconButton, ImageComparer, Include, Input,
-	Menu, MenuItem, MenuLabel, MutationObserver,
-	Option, Popup, ProgressBar, ProgressRing, QrCode,
-	Radio, RadioButton, RadioGroup, Range, Rating, RelativeTime, 
-	ResizeObserver, Select, Skeleton, Spinner,
-	Tooltip 
+	Alert, AnimatedImage, Avatar, Badge, Breadcrumb, BreadcrumbItem, 
+	ButtonGroup, Button, Card, Carousel, CarouselItem, Checkbox, 
+	ColorPicker, CopyButton, Details, Divider, Dialog, Drawer, 
+	Dropdown, FormatBytes, FormatDate, FormatNumber, Icon, IconButton,
+	ImageComparer, Include, Input, Menu, MenuItem, MenuLabel,  MutationObserver, 
+	Option, Popup, ProgressBar, ProgressRing, QrCode, Radio, RadioButton, 
+	RadioGroup, Range, Rating, RelativeTime, ResizeObserver, Select, 
+	Skeleton, Spinner, SplitPanel, Switch, Tab, TabGroup, TabPanel, 
+	Tag, Textarea, Tooltip, Tree, TreeItem, VisuallyHidden
 } from "astrolace:components";
 
 ---
@@ -24,6 +22,9 @@ import {
 	</head>
 	<body>
 		<h1> Playground Testing </h1>
+		<h4>
+			This is a test page to see how the components look and behave in a real-world scenario. All components shown here are from the Shoelace library and have been imported using the Astrolace Astro integration.
+		</h4>
 
 		<div>
 			<h2>Icon</h2>
@@ -296,6 +297,84 @@ import {
 		<div>
 			<h2>Spinner</h2>
 			<Spinner />
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Split Panel</h2>
+			<SplitPanel>
+				<div slot="start" style="height: 100px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+					Start
+				</div>
+				<div slot="end" style="height: 100px; background: var(--sl-color-neutral-50); display: flex; align-items: center; justify-content: center; overflow: hidden;">
+					End
+				</div>
+			</SplitPanel>
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Switch</h2>
+			<Switch />
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Tab, Tab Panel, and Tab Group</h2>
+			<TabGroup>
+				<Tab slot="nav" panel="general" active>General</Tab>
+				<Tab slot="nav" panel="custom">Custom</Tab>
+				<Tab slot="nav" panel="advanced">Advanced</Tab>
+				<Tab slot="nav" panel="disabled" disabled>Disabled</Tab>
+
+				<TabPanel name="general">General content</TabPanel>
+				<TabPanel name="custom">Custom content</TabPanel>
+				<TabPanel name="advanced">Advanced content</TabPanel>
+				<TabPanel name="disabled">Disabled content</TabPanel>
+			</TabGroup>
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Tag</h2>
+			<Tag variant="primary">Primary</Tag>
+			<Tag variant="success">Success</Tag>
+			<Tag variant="neutral">Neutral</Tag>
+			<Tag variant="warning">Warning</Tag>
+			<Tag variant="danger">Danger</Tag>
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Textarea</h2>
+			<Textarea name="test-textarea" placeholder="Hello!" />
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Tree and Tree Item</h2>
+			<Tree>
+				<TreeItem>Item 1</TreeItem>
+				<TreeItem>Item 2
+					<TreeItem>Item A</TreeItem>
+					<TreeItem>Item B</TreeItem>
+					<TreeItem>Item C</TreeItem>
+				</TreeItem>
+				<TreeItem>Item 3</TreeItem>
+			</Tree>
+		</div>
+
+		<Divider />
+
+		<div>
+			<h2>Visually Hidden</h2>
+			<VisuallyHidden>Hidden text</VisuallyHidden>
 		</div>
 
 		<Divider />

@@ -632,14 +632,114 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      * @see https://shoelace.style/components/spinner
      */
     export const Spinner: typeof import('${resolve('../components/Spinner.astro')}').default;
-    
-    // SplitPanel
-    // Switch
-    // Tab
-    // TabGroup
-    // TabPanel
-    // Tag
-    // Textarea
+
+    /**
+     * Shoelace.style <sl-split-panel> component
+     * 
+     * @see https://shoelace.style/components/split-panel
+     * 
+     * @param {number} position - The current position of the divider from the primary panel's edge as a percentage 0-100. Defaults to 50% of the container's initial size.
+     * @param {number} positionInPixels - The current position of the divider from the primary panel's edge in pixels.
+     * @param {boolean} virtual - Draws the split panel in a vertical orientation with the start and end panels stacked.
+     * @param {boolean} disabled - Disables resizing. Note that the position may still change as a result of resizing the host element.
+     * @param {'start' | 'end'} primary - If no primary panel is designated, both panels will resize proportionally when the host element is resized. If a primary panel is designated, it will maintain its size and the other panel will grow or shrink as needed when the host element is resized.
+     * @param {string} snap - One or more space-separated values at which the divider should snap. Values can be in pixels or percentages, e.g. "100px 50%".
+     * @param {number} snapThreshold - How close the divider must be to a snap point until snapping occurs.
+     */
+    export const SplitPanel: typeof import('${resolve('../components/SplitPanel.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-switch> component
+     * 
+     * @see https://shoelace.style/components/switch
+     * 
+     * @param {string} name - The name of the switch, submitted as a name/value pair with form data.
+     * @param {string} value - The value of the switch when it's checked, submitted as a name/value pair with form data.
+     * @param {'small' | 'medium' | 'large'} size - The size of the switch. Can be 'small', 'medium', 'large'.
+     * @param {boolean} disabled - Disables the switch.
+     * @param {boolean} checked - Whether the switch is checked or not.
+     * @param {boolean} defaultChecked - The default value of the form control. Primarily used for resetting the form control.
+     * @param {string} form - By default, form controls are associated with the nearest containing '<form>' element. This attribute allows you to place the form control outside of a form and associate it with the form that has this 'id'. The form must be in the same document or shadow root for this to work.
+     * @param {boolean} required - Makes the switch a required field.
+     * @param {string} helpText - The switch's help text. If you need to display HTML, use the 'help-text' slot instead.
+     */
+    export const Switch: typeof import('${resolve('../components/Switch.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-tab> component
+     * 
+     * @see https://shoelace.style/components/tab
+     * 
+     * @param {string} panel - The id of the tab panel the tab will control.
+     * @param {boolean} disabled - Disables the tab.
+     * @param {boolean} active - Makes the tab active.
+     * @param {boolean} closable - Makes the tab closable and shows a close button.
+     */
+    export const Tab: typeof import('${resolve('../components/tabs/Tab.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-tab-group> component
+     * 
+     * @see https://shoelace.style/components/tab-group
+     * 
+     * @param {'top' | 'right' | 'bottom' | 'left'} placement - The placement of the tabs. Can be 'top', 'right', 'bottom', 'left'.
+     * @param {'auto' | 'manual'} activation - When set to auto, navigating tabs with the arrow keys will instantly show the corresponding tab panel. When set to manual, the tab will receive focus but will not show until the user presses spacebar or enter.
+     * @param {boolean} noScrollControls - Hides the scroll controls when tabs are scrollable.
+     */
+    export const TabGroup: typeof import('${resolve('../components/tabs/TabGroup.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-tab-panel> component
+     * 
+     * @see https://shoelace.style/components/tab-panel
+     * 
+     * @param {string} name - The name of the tab panel.
+     * @param {boolean} active - When true, the tab panel will be shown.
+     */
+    export const TabPanel: typeof import('${resolve('../components/tabs/TabPanel.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-tag> component
+     * 
+     * @see https://shoelace.style/components/tag
+     * 
+     * @param {'primary' | 'success' | 'neutral' | 'warning' | 'danger' | 'text'} variant - The tag's theme variant.
+     * @param {'small' | 'medium' | 'large'} size - The size of the tag. Can be 'small', 'medium', 'large'.
+     * @param {boolean} pill - Draws a pill-style tag with rounded edges.
+     * @param {boolean} removable - Makes the tag removable and shows a remove button.
+     */
+    export const Tag: typeof import('${resolve('../components/Tag.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-textarea> component
+     * 
+     * @see https://shoelace.style/components/textarea
+     * 
+     * @param {string} name - The name of the textarea, submitted as a name/value pair with form data.
+     * @param {string} value - The current value of the textarea, submitted as a name/value pair with form data.
+     * @param {'small' | 'medium' | 'large'} size - The textarea's size. Can be 'small', 'medium', 'large'.
+     * @param {boolean} filled - Draws a filled textarea.
+     * @param {string} label - The textarea's label. If you need to display HTML, use the 'label' slot instead.
+     * @param {string} helpText - The textarea's help text. If you need to display HTML, use the 'help-text' slot instead.
+     * @param {string} placeholder - Placeholder text to show as a hint when the textarea is empty.
+     * @param {number} rows - The number of rows to display by default.
+     * @param {'none' | 'vertical' | 'auto'} resize - Controls how the textarea can be resized.
+     * @param {boolean} disabled - Disables the textarea.
+     * @param {boolean} readonly - Makes the textarea readonly.
+     * @param {string} form - By default, form controls are associated with the nearest containing '<form>' element. This attribute allows you to place the form control outside of a form and associate it with the form that has this 'id'. The form must be in the same document or shadow root for this to work.
+     * @param {boolean} required - Makes the textarea a required field.
+     * @param {number} minlength - The minimum length of input that will be considered valid.
+     * @param {number} maxlength - The maximum length of input that will be considered valid.
+     * @param {string} autocomplete - The textarea's autocomplete attribute.
+     * @param {string} autocapitalize - The textarea's autocapitalize attribute.
+     * @param {string} autocorrect - The textarea's autocorrect attribute.
+     * @param {string} spellcheck - The textarea's spellcheck attribute.
+     * @param {'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url'} inputmode - The textarea's inputmode attribute.
+     * @param {boolean} autofocus - Automatically focuses the textarea when the page loads.
+     * @param {'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send'} enterkeyhint - Used to customize the label or icon of the Enter key on virtual keyboards.
+     * @param {string} defaultValue - The default value of the form control. Primarily used for resetting the form control.
+     */
+    export const Textarea: typeof import('${resolve('../components/Textarea.astro')}').default;
 
     /**
      * Shoelace.style <sl-tooltip> component
@@ -656,9 +756,33 @@ componentsDTS.addLines(`declare module 'astrolace:components' {
      */
     export const Tooltip: typeof import('${resolve('../components/Tooltip.astro')}').default;
 
-    // Tree
-    // TreeItem
-    // VisuallyHidden
+    /**
+     * Shoelace.style <sl-tree> component
+     * 
+     * @see https://shoelace.style/components/tree
+     * 
+     * @param {'single' | 'multiple' | 'leaf'} selection - The selection behavior of the tree. Single selection allows only one node to be selected at a time. Multiple displays checkboxes and allows more than one node to be selected. Leaf allows only leaf nodes to be selected.
+     */
+    export const Tree: typeof import('${resolve('../components/tree/Tree.astro')}').default;
+
+    /**
+     * Shoelace.style <sl-tree-item> component
+     * 
+     * @see https://shoelace.style/components/tree-item
+     * 
+     * @param {boolean} expanded - Expands the tree item.
+     * @param {boolean} selected - Draws the tree item in a selected state.
+     * @param {boolean} disabled - Disables the tree item.
+     * @param {boolean} lazy - Enables lazy loading behavior.
+     */
+    export const TreeItem: typeof import('${resolve('../components/tree/TreeItem.astro')}').default;
+    
+    /**
+     * Shoelace.style <sl-visually-hidden> component
+     * 
+     * @see https://shoelace.style/components/visually-hidden
+     */
+    export const VisuallyHidden: typeof import('${resolve('../components/VisuallyHidden.astro')}').default;
 
 };`);
 

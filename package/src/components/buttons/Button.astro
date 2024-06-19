@@ -77,9 +77,13 @@ title, download, form, formAction, formEnctype, formMethod, formNoValidate, form
     {type} {name} {value} {rel} {title} {download}
     {form} {formAction} {formEnctype} {formMethod}
     {formNoValidate} {formTarget} {...rest} >
-    <div slot="prefix"><slot name="prefix" /></div>
+    { 
+        Astro.slots.has('prefix') && <slot slot="prefix" name="prefix"/> 
+    }
     <slot />
-    <div slot="suffix"><slot name="suffix" /></div>
+    {
+        Astro.slots.has('suffix') && <slot slot="suffix" name="suffix"/>
+    }
 </sl-button>
 
 <script>

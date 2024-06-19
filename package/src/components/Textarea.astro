@@ -1,0 +1,101 @@
+---
+import type { SlTextarea } from '@shoelace-style/shoelace';
+
+interface Props extends Omit<SlTextarea, any> {
+    /** The name of the textarea, submitted as a name/value pair with form data. */
+    name?: string;
+    /** The current value of the textarea, submitted as a name/value pair with form data. */
+    value?: string;
+    /** The textarea's size. */
+    size?: 'small' | 'medium' | 'large';
+    /** Draws a filled textarea. */
+    filled?: boolean;
+    /** The textarea's label. If you need to display HTML, use the `label` slot instead. */
+    label?: string;
+    /** The textarea's help text. If you need to display HTML, use the `help-text` slot instead. */
+    helpText?: string;
+    /** Placeholder text to show as a hint when the input is empty. */
+    placeholder?: string;
+    /** The number of rows to display by default. */
+    rows?: number;
+    /** Controls how the textarea can be resized. */
+    resize?: 'none' | 'vertical' | 'auto';
+    /** Disables the textarea. */
+    disabled?: boolean;
+    /** Makes the textarea readonly. */
+    readonly?: boolean;
+    /**
+     * By default, form controls are associated with the nearest containing `<form>` element. This attribute allows you to place the form control outside of a form and associate it with the form that has this `id`. The form must be in the same document or shadow root for this to work.
+     */
+    form?: string;
+    /** Makes the textarea a required field. */
+    required?: boolean;
+    /** The minimum length of input that will be considered valid. */
+    minlength?: number;
+    /** The maximum length of input that will be considered valid. */
+    maxlength?: number;
+    /** Controls whether and how text input is automatically capitalized as it is entered by the user. */
+    autocapitalize?: 'off' | 'none' | 'on' | 'sentences' | 'words' | 'characters';
+    /** Indicates whether the browser's autocorrect feature is on or off. */
+    autocorrect?: string;
+    /**
+     * Specifies what permission the browser has to provide assistance in filling out form field values. Refer to [this page on MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete) for available values.
+     */
+    autocomplete?: string;
+    /** Indicates that the input should receive focus on page load. */
+    autofocus?: boolean;
+    /** Used to customize the label or icon of the Enter key on virtual keyboards. */
+    enterkeyhint?: 'enter' | 'done' | 'go' | 'next' | 'previous' | 'search' | 'send';
+    /** Enables spell checking on the textarea. */
+    spellcheck?: boolean;
+    /**
+     * Tells the browser what type of data will be entered by the user, allowing it to display the appropriate virtual keyboard on supportive devices.
+     */
+    inputmode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+    /** The default value of the form control. Primarily used for resetting the form control. */
+    defaultValue?: string;
+}
+
+const { autocapitalize, autocomplete, autocorrect, autofocus, defaultValue, disabled, enterkeyhint, filled, form, helpText, inputmode, label, maxlength, minlength, name, placeholder, readonly, required, resize, rows, size, spellcheck, value, ...rest } = Astro.props;
+---
+<sl-textarea
+    {autocapitalize}
+    {autocomplete}
+    {autocorrect}
+    {autofocus}
+    {defaultValue}
+    {disabled}
+    {enterkeyhint}
+    {filled}
+    {form}
+    {helpText}
+    {inputmode}
+    {label}
+    {maxlength}
+    {minlength}
+    {name}
+    {placeholder}
+    {readonly}
+    {required}
+    {resize}
+    {rows}
+    {size}
+    {spellcheck}
+    {value}
+    {...rest}
+    >
+    {
+        Astro.slots.has('label') && (
+            <div slot="label"><slot name="label"/></div>
+        )
+    }
+    {
+        Astro.slots.has('help-text') && (
+            <div slot="help-text"><slot name="help-text"/></div>
+        )
+    }
+</sl-textarea>
+
+<script>
+    import '@shoelace-style/shoelace/dist/components/textarea/textarea.js';
+</script>
