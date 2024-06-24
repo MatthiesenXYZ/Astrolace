@@ -32,6 +32,15 @@ const { id, open, label, noHeader, ...rest } = Astro.props;
     {noHeader}
     {...rest}
     >
+    {
+        Astro.slots.has('label') && <slot slot="label" name="label"/>
+    }
+    {
+        Astro.slots.has('header-actions') && <slot slot="header-actions" name="header-actions"/>
+    }
+    {
+        Astro.slots.has('footer') && <slot slot="footer" name="footer"/>
+    }
     <slot />
 </sl-dialog>
 
