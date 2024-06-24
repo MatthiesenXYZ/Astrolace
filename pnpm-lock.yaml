@@ -24,8 +24,8 @@ importers:
         specifier: '>=4.8.6'
         version: 4.8.6(@types/node@20.14.5)(typescript@5.4.5)
       astro-integration-kit:
-        specifier: ^0.13.3
-        version: 0.13.3(astro@4.8.6(@types/node@20.14.5)(typescript@5.4.5))
+        specifier: ^0.14.0
+        version: 0.14.0(astro@4.8.6(@types/node@20.14.5)(typescript@5.4.5))
       lit:
         specifier: ^3.1.4
         version: 3.1.4
@@ -1237,8 +1237,8 @@ packages:
     resolution: {integrity: sha512-6t10qk83GOG8p0vKmaCr8eiilZwO171AvbROMtvvNiwrTly62t+7XkA8RdIIVbpMhCASAsxgAzdRSwh6nw/5Dg==}
     engines: {node: '>=4'}
 
-  astro-integration-kit@0.13.3:
-    resolution: {integrity: sha512-hUEQMnZ7z+7ySPCX6mXnIr0BFZU1+49eQQBg4aHjKGz1o2oZ5tvuB9Tlyj/orRH9ubd+Gkd0SSoldz0BTNe4Rg==}
+  astro-integration-kit@0.14.0:
+    resolution: {integrity: sha512-Tg85rlRRKEkTK2a02XJByvNOuzGN1eDIfAJxwHPUTOn/iE7yFxL9RaLqSdO8X8PxnbL4e1H6OkK6AVFnHZob9A==}
     peerDependencies:
       '@astrojs/db': ^0.9 || ^0.10 || ^0.11
       astro: ^4.4.1
@@ -4199,7 +4199,7 @@ snapshots:
     dependencies:
       tslib: 2.6.2
 
-  astro-integration-kit@0.13.3(astro@4.8.6(@types/node@20.14.5)(typescript@5.4.5)):
+  astro-integration-kit@0.14.0(astro@4.8.6(@types/node@20.14.5)(typescript@5.4.5)):
     dependencies:
       astro: 4.8.6(@types/node@20.14.5)(typescript@5.4.5)
       pathe: 1.1.2
