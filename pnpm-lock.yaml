@@ -22,10 +22,10 @@ importers:
         version: 2.15.1(@types/react@18.3.2)
       astro:
         specifier: '>=4.8.6'
-        version: 4.8.6(@types/node@20.14.5)(typescript@5.4.5)
+        version: 4.8.6(@types/node@20.14.5)(typescript@5.5.2)
       astro-integration-kit:
         specifier: ^0.14.0
-        version: 0.14.0(astro@4.8.6(@types/node@20.14.5)(typescript@5.4.5))
+        version: 0.14.0(astro@4.8.6(@types/node@20.14.5)(typescript@5.5.2))
       lit:
         specifier: ^3.1.4
         version: 3.1.4
@@ -37,8 +37,8 @@ importers:
         specifier: ^20.14.5
         version: 20.14.5
       typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
+        specifier: ^5.5.2
+        version: 5.5.2
 
   playground:
     dependencies:
@@ -47,14 +47,14 @@ importers:
         version: link:../package
       astro:
         specifier: ^4.10.3
-        version: 4.10.3(@types/node@20.14.5)(typescript@5.4.5)
+        version: 4.10.3(@types/node@20.14.5)(typescript@5.5.2)
     devDependencies:
       '@types/node':
         specifier: ^20.14.5
         version: 20.14.5
       typescript:
-        specifier: ^5.4.5
-        version: 5.4.5
+        specifier: ^5.5.2
+        version: 5.5.2
 
 packages:
 
@@ -2814,8 +2814,8 @@ packages:
     resolution: {integrity: sha512-/OxDN6OtAk5KBpGb28T+HZc2M+ADtvRxXrKKbUwtsLgdoxgX13hyy7ek6bFRl5+aBs2yZzB0c4CnQfAtVypW/g==}
     engines: {node: '>= 0.4'}
 
-  typescript@5.4.5:
-    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+  typescript@5.5.2:
+    resolution: {integrity: sha512-NcRtPEOsPFFWjobJEtfihkLCZCXZt/os3zf8nTxjVH3RvTSxjrCamJpbExGvYOF+tFHc3pA65qpdwPbzjohhew==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -4179,13 +4179,13 @@ snapshots:
     dependencies:
       tslib: 2.6.2
 
-  astro-integration-kit@0.14.0(astro@4.8.6(@types/node@20.14.5)(typescript@5.4.5)):
+  astro-integration-kit@0.14.0(astro@4.8.6(@types/node@20.14.5)(typescript@5.5.2)):
     dependencies:
-      astro: 4.8.6(@types/node@20.14.5)(typescript@5.4.5)
+      astro: 4.8.6(@types/node@20.14.5)(typescript@5.5.2)
       pathe: 1.1.2
       recast: 0.23.7
 
-  astro@4.10.3(@types/node@20.14.5)(typescript@5.4.5):
+  astro@4.10.3(@types/node@20.14.5)(typescript@5.5.2):
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@astrojs/internal-helpers': 0.4.0
@@ -4241,7 +4241,7 @@ snapshots:
       shiki: 1.7.0
       string-width: 7.1.0
       strip-ansi: 7.1.0
-      tsconfck: 3.1.0(typescript@5.4.5)
+      tsconfck: 3.1.0(typescript@5.5.2)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       vite: 5.3.1(@types/node@20.14.5)
@@ -4263,7 +4263,7 @@ snapshots:
       - terser
       - typescript
 
-  astro@4.8.6(@types/node@20.14.5)(typescript@5.4.5):
+  astro@4.8.6(@types/node@20.14.5)(typescript@5.5.2):
     dependencies:
       '@astrojs/compiler': 2.8.0
       '@astrojs/internal-helpers': 0.4.0
@@ -4319,7 +4319,7 @@ snapshots:
       shiki: 1.6.0
       string-width: 7.1.0
       strip-ansi: 7.1.0
-      tsconfck: 3.0.3(typescript@5.4.5)
+      tsconfck: 3.0.3(typescript@5.5.2)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
       vite: 5.2.11(@types/node@20.14.5)
@@ -6234,13 +6234,13 @@ snapshots:
 
   trough@2.2.0: {}
 
-  tsconfck@3.0.3(typescript@5.4.5):
+  tsconfck@3.0.3(typescript@5.5.2):
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.5.2
 
-  tsconfck@3.1.0(typescript@5.4.5):
+  tsconfck@3.1.0(typescript@5.5.2):
     optionalDependencies:
-      typescript: 5.4.5
+      typescript: 5.5.2
 
   tslib@2.6.2: {}
 
@@ -6294,7 +6294,7 @@ snapshots:
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
 
-  typescript@5.4.5: {}
+  typescript@5.5.2: {}
 
   unbox-primitive@1.0.2:
     dependencies:
