@@ -1,5 +1,11 @@
 # @matthiesenxyz/astrolace
 
+## 0.1.2
+
+### Patch Changes
+
+- a209f42: fix slots on the dialog component
+
 ## 0.1.1
 
 ### Patch Changes
