@@ -1,10 +1,10 @@
 import { z } from "zod";
 
-type OptionsSchema = z.ZodObject<{
+type OptionsSchema = z.ZodDefault<z.ZodOptional<z.ZodObject<{
     verbose: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     injectCss: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
     injectDarkTheme: z.ZodDefault<z.ZodOptional<z.ZodBoolean>>;
-}, "strip" | "passthrough">;
+}, "strip" | "passthrough">>>;
 
 // Options for the main Integration
 export const optionsSchema: OptionsSchema = z.object({
@@ -36,6 +36,6 @@ export const optionsSchema: OptionsSchema = z.object({
      * @default true
      */
     injectDarkTheme: z.boolean().optional().default(true),
-});
+}).optional().default({});
 
 export type Options = z.infer<typeof optionsSchema>;
