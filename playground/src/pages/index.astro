@@ -44,7 +44,7 @@ import {
 			<h2>Tooltip</h2>
 			<Tooltip placement="top-start">
 				<div slot="content">Hello!</div>
-				<div>tested</div>
+				Hover me
 			</Tooltip>
 		</div>
 
@@ -341,7 +341,7 @@ import {
 
 		<div>
 			<h2>Tag</h2>
-			<Tag variant="primary">Primary</Tag>
+			<Tag variant="primary" >Primary</Tag>
 			<Tag variant="success">Success</Tag>
 			<Tag variant="neutral">Neutral</Tag>
 			<Tag variant="warning">Warning</Tag>
@@ -352,7 +352,11 @@ import {
 
 		<div>
 			<h2>Textarea</h2>
-			<Textarea name="test-textarea" placeholder="Hello!" />
+			<Textarea name="test-textarea" placeholder="Hello!">
+				<div slot="label"><bold>Test Textarea</bold></div>
+				<div slot="help-text">This is a test textarea</div>
+				test
+			</Textarea>
 		</div>
 
 		<Divider />

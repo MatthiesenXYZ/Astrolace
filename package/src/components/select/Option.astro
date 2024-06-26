@@ -10,13 +10,15 @@ interface Props extends Omit<SlOption, any> {
     value?: string;
     /** Draws the option in a disabled state, preventing selection. */
     disabled?: boolean;
+    id?: string;
 }
 
-const { disabled, value, ...rest } = Astro.props;
+const { disabled, id, value, ...rest } = Astro.props;
 ---
 
 <sl-option
     {value}
+    {id}
     {disabled}
     {...rest}
     >

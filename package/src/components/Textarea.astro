@@ -84,16 +84,9 @@ const { autocapitalize, autocomplete, autocorrect, autofocus, defaultValue, disa
     {value}
     {...rest}
     >
-    {
-        Astro.slots.has('label') && (
-            <div slot="label"><slot name="label"/></div>
-        )
-    }
-    {
-        Astro.slots.has('help-text') && (
-            <div slot="help-text"><slot name="help-text"/></div>
-        )
-    }
+    <div slot="label"><slot name="label"/></div>
+    <div slot="help-text"><slot name="help-text"/></div>
+    <slot />
 </sl-textarea>
 
 <script>

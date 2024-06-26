@@ -1,7 +1,6 @@
 ---
 import type { SlImageComparer } from '@shoelace-style/shoelace';
 
-
 interface Props extends Omit<SlImageComparer, any> {
     /** The position of the divider as a percentage. */
     position: number;
@@ -11,7 +10,9 @@ const { position } = Astro.props;
 ---
 
 <sl-image-comparer {position}>
-    <slot />
+    <div slot="before"><slot name="before" /></div>
+    <div slot="after"><slot name="after" /></div>
+    <div slot="handle"><slot name="handle" /></div>
 </sl-image-comparer>
 
 <script>

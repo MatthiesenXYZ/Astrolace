@@ -50,6 +50,12 @@ const {
     {mouseDragging}
     {...rest}
     >
+    {
+        Astro.slots.has('next-icon') && <slot slot="next-icon" name="next-icon"/>
+    }
+    {
+        Astro.slots.has('previous-icon') && <slot slot="previous-icon" name="previous-icon"/>
+    }
     <slot />
 </sl-carousel>
 

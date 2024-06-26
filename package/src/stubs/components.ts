@@ -790,7 +790,7 @@ declare module 'astrolace:components/header' {
     /** 
      * Shoelace.style header component.
      * 
-     * @description This component is used to include the Shoelace.style loader in your Astro Layout.
+     * @description This component is used to register the Shoelace.style default icon library. (Bootstrap Icons v1.11.3)
      * 
      * @usage Put this in your Astro Layout's head tag.
      * 

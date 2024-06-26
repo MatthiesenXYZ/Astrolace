@@ -1,9 +1,23 @@
 ---
-const { ...rest } = Astro.props;
+import type { HTMLAttributes } from 'astro/types';
 
+interface Props extends HTMLAttributes<'div'> {
+    id?: string;
+}
+
+const { id, ...rest} = Astro.props;
 ---
 
-<sl-card {...rest}>
+<sl-card {id} {...rest}>
+    {
+        Astro.slots.has('header') && <slot slot="header" name="header"/>
+    }
+    {
+        Astro.slots.has('header-actions') && <slot slot="image" name="image"/>
+    }
+    {
+        Astro.slots.has('footer') && <slot slot="footer" name="footer"/>
+    }
     <slot />
 </sl-card>
 

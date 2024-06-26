@@ -33,9 +33,10 @@ interface Props extends Omit<SlRange, any> {
     form?: string;
     /** The default value of the form control. Primarily used for resetting the form control. */
     defaultValue?: number;
+    id?: string;
 }
 
-const { defaultValue, disabled, form, helpText, label, max, min, name, step, tooltip, tooltipFormatter, value, ...rest } = Astro.props;
+const { defaultValue, id, disabled, form, helpText, label, max, min, name, step, tooltip, tooltipFormatter, value, ...rest } = Astro.props;
 ---
 
 <sl-range
@@ -48,6 +49,7 @@ const { defaultValue, disabled, form, helpText, label, max, min, name, step, too
     {min}
     {name}
     {step}
+    {id}
     {tooltip}
     {tooltipFormatter}
     {value}

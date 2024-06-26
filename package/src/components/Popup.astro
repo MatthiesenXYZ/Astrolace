@@ -86,9 +86,10 @@ interface Props extends Omit<SlPopup, any> {
      * When a gap exists between the anchor and the popup element, this option will add a "hover bridge" that fills the gap using an invisible element. This makes listening for events such as `mouseenter` and `mouseleave` more sane because the pointer never technically leaves the element. The hover bridge will only be drawn when the popover is active.
      */
     hoverBridge?: boolean;
+    id?: string;
 }
 
-const { active, anchor, arrow, arrowPadding, arrowPlacement, autoSize, autoSizeBoundary, autoSizePadding, distance, flip, flipBoundary, flipFallbackPlacements, flipFallbackStrategy, flipPadding, hoverBridge, placement, popup, shift, shiftBoundary, shiftPadding, skidding, strategy, sync, ...rest } = Astro.props;
+const { active, id, anchor, arrow, arrowPadding, arrowPlacement, autoSize, autoSizeBoundary, autoSizePadding, distance, flip, flipBoundary, flipFallbackPlacements, flipFallbackStrategy, flipPadding, hoverBridge, placement, popup, shift, shiftBoundary, shiftPadding, skidding, strategy, sync, ...rest } = Astro.props;
 ---
 
 <sl-popup
@@ -96,6 +97,7 @@ const { active, anchor, arrow, arrowPadding, arrowPlacement, autoSize, autoSizeB
     {anchor}
     {arrow}
     {arrowPadding}
+    {id}
     {arrowPlacement}
     {autoSize}
     {autoSizeBoundary}

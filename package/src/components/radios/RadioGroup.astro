@@ -23,9 +23,10 @@ interface Props extends Omit<SlRadioGroup, any> {
     form?: string;
     /** Ensures a child radio is checked before allowing the containing form to submit. */
     required?: boolean;
+    id?: string;
 }
 
-const { name, size, value, form, helpText, label, required, ...rest } = Astro.props;
+const { name, id, size, value, form, helpText, label, required, ...rest } = Astro.props;
 ---
 
 <sl-radio-group
@@ -33,6 +34,7 @@ const { name, size, value, form, helpText, label, required, ...rest } = Astro.pr
     {helpText}
     {name}
     {value}
+    {id}
     {size}
     {form}
     {required}

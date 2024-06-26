@@ -2,8 +2,6 @@
 import type { SlTooltip } from '@shoelace-style/shoelace';
 
 interface Props extends Omit<SlTooltip, any> {
-    /** The tooltip's content. If you need to display HTML, use the `content` slot instead. */
-    content?: string;
     /**
      * The preferred placement of the tooltip. Note that the actual placement may vary as needed to keep the tooltip
      * inside of the viewport.
@@ -29,14 +27,14 @@ interface Props extends Omit<SlTooltip, any> {
      * scenarios.
      */
     hoist?: boolean;
+    id?: string;
 } 
 
-const { placement, disabled, distance, open, skidding, trigger, hoist, ...rest } = Astro.props;
-
-
+const { id, placement, disabled, distance, open, skidding, trigger, hoist, ...rest } = Astro.props;
 ---
 
 <sl-tooltip 
+    {id}
     {placement} 
     {disabled} 
     {distance} 
@@ -46,7 +44,7 @@ const { placement, disabled, distance, open, skidding, trigger, hoist, ...rest }
     {hoist}
     {...rest}
     >
-    <div slot="content"><slot name="content"/></div>
+    <div slot="content"><slot name="content" /></div>
     <slot />
 </sl-tooltip>
 

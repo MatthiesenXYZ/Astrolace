@@ -1,7 +1,6 @@
 ---
 import type { SlRelativeTime } from '@shoelace-style/shoelace';
 
-
 interface Props extends Omit<SlRelativeTime, any> {
     /**
      * The date from which to calculate time from. If not set, the current date and time will be used. When passing a string, it's strongly recommended to use the ISO 8601 format to ensure timezones are handled correctly. To convert a date to this format in JavaScript, use [`date.toISOString()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString).
@@ -23,9 +22,10 @@ interface Props extends Omit<SlRelativeTime, any> {
      * @see https://shoelace.style/components/relative-time#localization
      */
     lang?: string;
+    id?: string;
 }
 
-const { date, format, lang, numeric, sync, ...rest } = Astro.props;
+const { date, format, lang, numeric, sync, id, ...rest } = Astro.props;
 ---
 <sl-relative-time
     date={date}
@@ -33,6 +33,7 @@ const { date, format, lang, numeric, sync, ...rest } = Astro.props;
     {lang}
     {numeric}
     {sync}
+    {id}
     {...rest}
     >
 </sl-relative-time>

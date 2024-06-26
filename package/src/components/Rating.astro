@@ -16,6 +16,7 @@ interface Props extends Omit<SlRating, any> {
     readonly?: boolean;
     /** Disables the rating. */
     disabled?: boolean;
+    id?: string;
     /**
      * A function that customizes the symbol to be rendered. The first and only argument is the rating's current value.
      * The function should return a string containing trusted HTML of the symbol to render at the specified value. Works
@@ -24,9 +25,10 @@ interface Props extends Omit<SlRating, any> {
     getSymbol?: (value: number) => string;
 }
 
-const { disabled, label, max, precision, readonly, value } = Astro.props;
+const { id, disabled, label, max, precision, readonly, value } = Astro.props;
 ---
 <sl-rating
+    {id}
     {disabled}
     {label}
     {max}

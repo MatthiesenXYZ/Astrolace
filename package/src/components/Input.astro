@@ -80,10 +80,11 @@ interface Props extends Omit<SlInput, any> {
      * keyboard on supportive devices.
      */
     inputmode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
+    id?: string;
 }
 
 const { 
-    name, autocapitalize, autocomplete, autocorrect, 
+    name, autocapitalize, id, autocomplete, autocorrect, 
     autofocus, clearable, defaultValue, disabled, filled,
     form, helpText, label, maxlength, max, min, minlength,
     noSpinButtons, passwordToggle, passwordVisible, pattern,
@@ -95,6 +96,7 @@ const {
 
 <sl-input
     {name}
+    {id}
     {autocapitalize}
     {autocomplete}
     {autocorrect}

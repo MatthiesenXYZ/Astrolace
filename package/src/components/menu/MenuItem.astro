@@ -13,19 +13,30 @@ interface Props extends Omit<SlMenuItem, any> {
     loading?: boolean;
     /** Draws the menu item in a disabled state, preventing selection. */
     disabled?: boolean;
+    id?: string;
 }
 
-const { checked, disabled, loading, type = "normal", value, ...rest } = Astro.props;
+const { checked, id, disabled, loading, type = "normal", value, ...rest } = Astro.props;
 ---
 
 <sl-menu-item
     {checked}
+    {id}
     {disabled}
     {loading}
     {type}
     {value}
     {...rest}
     >
+    {
+        Astro.slots.has('prefix') && <slot slot="prefix" name="prefix"/>
+    }
+    {
+        Astro.slots.has('suffix') && <slot slot="suffix" name="suffix"/>
+    }
+    {
+        Astro.slots.has('submenu') && <slot slot="submenu" name="submenu"/>
+    }
     <slot />
 </sl-menu-item>
 

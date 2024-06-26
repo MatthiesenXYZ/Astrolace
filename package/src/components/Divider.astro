@@ -2,15 +2,49 @@
 import type { SlDivider } from '@shoelace-style/shoelace';
 
 interface Props extends Omit<SlDivider, any>{
-    /** Draws the divider in a vertical orientation. */
+    /** 
+     * Draws the divider in a vertical orientation. 
+    */
     vertical?: boolean;
+    /** 
+     * Allows customization of the sl-divider CSS without the user having to build a custom style tag 
+    */
+    cssVars?: {
+        /**
+         * The width of the divider
+         * @default var(--sl-panel-border-width)
+         */
+        dividerwidth?: string;
+        /**
+         * The color of the divider
+         * @default var(--sl-color-gray-200)
+         */
+        dividercolor?: string;
+        /**
+         * The spacing of the divider
+         * @default var(--sl-spacing-medium)
+         */
+        dividerspacing?: string;
+    }
 }
 
-const { vertical, ...rest } = Astro.props;
+const { vertical, cssVars, ...rest } = Astro.props;
+
+const dividerwidth = cssVars?.dividerwidth || "var(--sl-panel-border-width)";
+const dividercolor = cssVars?.dividercolor || "var(--sl-color-gray-200)";
+const dividerspacing = cssVars?.dividerspacing || "var(--sl-spacing-medium)";
 
 ---
 
 <sl-divider {vertical} {...rest}></sl-divider>
+
+<style scoped define:vars={{ dividerwidth, dividercolor, dividerspacing }}>
+    sl-divider {
+        --width: var(--dividerwidth);
+        --spacing: var(--dividerspacing);
+        --color: var(--dividercolor);
+    }
+</style>
 
 <script>
     import '@shoelace-style/shoelace/dist/components/divider/divider.js';

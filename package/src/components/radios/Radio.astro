@@ -10,13 +10,15 @@ interface Props extends Omit<SlRadio, any> {
     size?: 'small' | 'medium' | 'large';
     /** Disables the radio. */
     disabled?: boolean;
+    id?: string;
 }
 
-const { value, disabled, size, ...rest } = Astro.props;
+const { value, id, disabled, size, ...rest } = Astro.props;
 ---
 <sl-radio
     value={value}
     {size}
+    {id}
     {disabled}
     {...rest}
     >

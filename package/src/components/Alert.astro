@@ -17,15 +17,14 @@ interface Props extends Omit<SlAlert, any> {
      * the alert will not close on its own.
      */
     duration?: number;
+    id?: string;
 }
 
 const { variant, open, closable, duration, ...rest } = Astro.props;
 ---
 
 <sl-alert {variant} {open} {closable} {duration} {...rest}>
-    {
-        Astro.slots.has('icon') && <slot slot="icon" name="icon"/>
-    }
+    { Astro.slots.has('icon') && <slot slot="icon" name="icon"/> }
     <slot />
 </sl-alert>
 

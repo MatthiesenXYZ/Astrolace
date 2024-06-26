@@ -5,7 +5,7 @@ import type { ImageMetadata } from 'astro';
 
 interface Props extends Omit<SlAvatar, any>{
     /** The image source to use for the avatar. */
-    image: string | ImageMetadata;
+    image?: string | ImageMetadata;
     /** A label to use to describe the avatar to assistive devices. */
     label?: string;
     /** Initials to use as a fallback when no image is available (1-2 characters max recommended). */
@@ -20,17 +20,10 @@ interface Props extends Omit<SlAvatar, any>{
 
 const { image, initials, label, loading = "eager", shape = "circle", defaultImage = "person-fill", ...rest } = Astro.props;
 
-let src: string;
-
-if (typeof image === 'string') {
-    src = image;
-} else {
-    src = image.src;
-}
 
 ---
 
-<sl-avatar image={src} {initials} {label} {loading} {shape} {...rest}>
+<sl-avatar {image} {initials} {label} {loading} {shape} {...rest}>
     <sl-icon slot="icon" name={defaultImage}></sl-icon>
 </sl-avatar>
 

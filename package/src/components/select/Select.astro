@@ -58,10 +58,11 @@ interface Props extends Omit<SlSelect, any> {
     form?: string;
     /** The select's required attribute. */
     required?: boolean;
+    id?: string;
 }
 
 const { 
-    clearable, defaultValue, disabled, filled, form, 
+    clearable, id, defaultValue, disabled, filled, form, 
     helpText, hoist, label, maxOptionsVisible, multiple, 
     name, open, pill, placeholder, placement, required, 
     size, value, ...rest
@@ -72,6 +73,7 @@ const {
     {clearable}
     {defaultValue}
     {disabled}
+    {id}
     {filled}
     {form}
     {helpText}

@@ -12,13 +12,15 @@ interface Props extends Omit<SlRadioButton, any> {
     size?: 'small' | 'medium' | 'large';
     /** Draws a pill-style radio button with rounded edges. */
     pill?: boolean;
+    id?: string;
 }
 
-const { value, disabled, pill, size, ...rest } = Astro.props;
+const { value, id, disabled, pill, size, ...rest } = Astro.props;
 ---
 <sl-radio-button
     value={value}
     {disabled}
+    {id}
     {pill}
     {size}
     {...rest}

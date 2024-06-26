@@ -4,11 +4,12 @@ import type { SlSkeleton } from '@shoelace-style/shoelace';
 interface Props extends Omit<SlSkeleton, any> {
     /** Determines which effect the skeleton will use. */
     effect?: 'pulse' | 'sheen' | 'none';
+    id?: string;
 }
 
-const { effect, ...rest } = Astro.props;
+const { effect, id, ...rest } = Astro.props;
 ---
-<sl-skeleton {effect} {...rest}></sl-skeleton>
+<sl-skeleton {id} {effect} {...rest}></sl-skeleton>
 
 <script>
     import '@shoelace-style/shoelace/dist/components/skeleton/skeleton.js';

@@ -23,9 +23,11 @@ interface Props extends Omit<SlSwitch, any> {
     required?: boolean;
     /** The switch's help text. If you need to display HTML, use the `help-text` slot instead. */
     helpText?: string;
+    /** The id for the swtich */
+    id?: string;
 }
 
-const { checked, defaultChecked, disabled, form, helpText, name, required, size, value, ...rest } = Astro.props;
+const { checked, defaultChecked, disabled, form, helpText, name, required, size, value, id, ...rest } = Astro.props;
 ---
 <sl-switch
     {checked}
@@ -37,13 +39,12 @@ const { checked, defaultChecked, disabled, form, helpText, name, required, size,
     {required}
     {size}
     {value}
+    {id}
     {...rest}
     >
-    {
-        Astro.slots.has('help-text') && (
+    { Astro.slots.has('help-text') && (
             <div slot="help-text"><slot name="help-text"/></div>
-        )
-    }
+    ) }
     <slot />
 </sl-switch>
 

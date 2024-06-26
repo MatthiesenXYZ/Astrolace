@@ -12,13 +12,14 @@ interface Props extends Omit<SlDetails, any>{
     summary?: string;
     /** Disables the details so it can't be toggled. */
     disabled?: boolean;
+    id?: string;
 }
 
-const { open, disabled, summary, ...rest } = Astro.props;
+const { open, id, disabled, summary, ...rest } = Astro.props;
 
 ---
 
-<sl-details {open} {disabled} {summary} {...rest}>
+<sl-details {open} {id} {disabled} {summary} {...rest}>
     <slot />
 </sl-details>
 
