@@ -19,7 +19,8 @@ const { open, id, disabled, summary, ...rest } = Astro.props;
 
 ---
 
-<sl-details {open} {id} {disabled} {summary} {...rest}>
+<sl-details {open} {id} {disabled} {...rest}>
+    <div slot="summary"><slot name="summary">{summary}</slot></div>
     <slot />
 </sl-details>
 
