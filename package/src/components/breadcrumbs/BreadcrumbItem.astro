@@ -11,14 +11,20 @@ interface Props extends Omit<SlBreadcrumbItem, any> {
     target?: '_blank' | '_parent' | '_self' | '_top';
     /** The `rel` attribute to use on the link. Only used when `href` is set. */
     rel?: string;
+    /** Prefix icon */
+    prefix?: string;
+    /** Suffix icon */
+    suffix?: string;
 }
 
-const { href, rel = "noreferrer noopener", target, ...rest } = Astro.props;
+const { prefix, suffix, href, rel = "noreferrer noopener", target, ...rest } = Astro.props;
 
 ---
 
 <sl-breadcrumb-item {href} {rel} {target} {...rest}>
+    { prefix && <sl-icon name={prefix} slot="prefix"></sl-icon> }
     <slot />
+    { suffix && <sl-icon name={suffix} slot="suffix"></sl-icon> }
 </sl-breadcrumb-item>
 
 <script>

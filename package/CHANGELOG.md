@@ -1,5 +1,11 @@
 # @matthiesenxyz/astrolace
 
+## 0.1.4
+
+### Patch Changes
+
+- fix breadcrumbitem to allow prefix and suffix icons
+
 ## 0.1.3
 
 ### Patch Changes
