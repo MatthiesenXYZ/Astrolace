@@ -1,7 +1,8 @@
 ---
 import type { SlBreadcrumbItem } from '@shoelace-style/shoelace';
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends Omit<SlBreadcrumbItem, any> {
+interface Props extends Omit<SlBreadcrumbItem, any>, Partial<HTMLAttributes<'span'>> {
     /**
      * Optional URL to direct the user to when the breadcrumb item is activated. When set, a link will be rendered
      * internally. When unset, a button will be rendered instead.

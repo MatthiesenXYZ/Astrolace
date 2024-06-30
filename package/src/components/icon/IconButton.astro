@@ -1,7 +1,8 @@
 ---
 import type { SlIconButton } from '@shoelace-style/shoelace';
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends Omit<SlIconButton, any> {
+interface Props extends Omit<SlIconButton, any>, Partial<HTMLAttributes<'button'>> {
     /** The name of the icon to draw. Available names depend on the icon library being used. */
     name?: string;
     /** The name of a registered custom icon library. */

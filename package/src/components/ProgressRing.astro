@@ -1,19 +1,21 @@
 ---
 import type { SlProgressRing } from '@shoelace-style/shoelace'
 
-interface Props extends Omit<SlProgressRing, any> {
+interface Props extends Omit<SlProgressRing, any>, Partial<HTMLElement> {
     /** The current progress as a percentage, 0 to 100. */
     value?: number;
     /** A custom label for assistive devices. */
     label?: string;
+    id?: string;
 }
 
-const { value, label, ...rest } = Astro.props;
+const { value, id, label, ...rest } = Astro.props;
 ---
 
 <sl-progress-ring
     {value}
     {label}
+    {id}
     {...rest}
     >
     <slot />

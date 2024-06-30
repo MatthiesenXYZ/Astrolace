@@ -1,7 +1,15 @@
 ---
-const { ...rest } = Astro.props;
+import type { SlCarouselItem } from '@shoelace-style/shoelace';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends Omit<SlCarouselItem, any>, Partial<HTMLAttributes<'div'>> {
+    /** The index of the item in the carousel. */
+    index?: number;
+}
+
+const { index, ...rest } = Astro.props;
 ---
-<sl-carousel-item {...rest}>
+<sl-carousel-item {index} {...rest}>
     <slot />
 </sl-carousel-item>
 

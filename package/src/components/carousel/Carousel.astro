@@ -1,7 +1,8 @@
 ---
 import type { SlCarousel } from '@shoelace-style/shoelace';
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends Omit<SlCarousel, any>{
+interface Props extends Omit<SlCarousel, any>, Partial<HTMLAttributes<'div'>> {
     /** When set, allows the user to navigate the carousel in the same direction indefinitely. */
     loop?: boolean;
     /** When set, show the carousel's navigation. */
