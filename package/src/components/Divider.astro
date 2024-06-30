@@ -1,7 +1,8 @@
 ---
 import type { SlDivider } from '@shoelace-style/shoelace';
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends Omit<SlDivider, any>{
+interface Props extends Omit<SlDivider, any>, Partial<HTMLAttributes<'div'>> {
     /** 
      * Draws the divider in a vertical orientation. 
     */

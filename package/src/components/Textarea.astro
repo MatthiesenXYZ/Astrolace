@@ -54,9 +54,10 @@ interface Props extends Omit<SlTextarea, any> {
     inputmode?: 'none' | 'text' | 'decimal' | 'numeric' | 'tel' | 'search' | 'email' | 'url';
     /** The default value of the form control. Primarily used for resetting the form control. */
     defaultValue?: string;
+    id?: string;
 }
 
-const { autocapitalize, autocomplete, autocorrect, autofocus, defaultValue, disabled, enterkeyhint, filled, form, helpText, inputmode, label, maxlength, minlength, name, placeholder, readonly, required, resize, rows, size, spellcheck, value, ...rest } = Astro.props;
+const { autocapitalize, id, autocomplete, autocorrect, autofocus, defaultValue, disabled, enterkeyhint, filled, form, helpText, inputmode, label, maxlength, minlength, name, placeholder, readonly, required, resize, rows, size, spellcheck, value, ...rest } = Astro.props;
 ---
 <sl-textarea
     {autocapitalize}
@@ -80,6 +81,7 @@ const { autocapitalize, autocomplete, autocorrect, autofocus, defaultValue, disa
     {resize}
     {rows}
     {size}
+    {id}
     {spellcheck}
     {value}
     {...rest}

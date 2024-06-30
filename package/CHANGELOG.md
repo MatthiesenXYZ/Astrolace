@@ -1,5 +1,11 @@
 # @matthiesenxyz/astrolace
 
+## 0.1.8
+
+### Patch Changes
+
+- update components to add astro component props
+
 ## 0.1.7
 
 ### Patch Changes

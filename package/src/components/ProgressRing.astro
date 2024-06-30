@@ -1,7 +1,8 @@
 ---
 import type { SlProgressRing } from '@shoelace-style/shoelace'
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends Omit<SlProgressRing, any>, Partial<HTMLElement> {
+interface Props extends Omit<SlProgressRing, any>, Partial<HTMLAttributes<'div'>> {
     /** The current progress as a percentage, 0 to 100. */
     value?: number;
     /** A custom label for assistive devices. */

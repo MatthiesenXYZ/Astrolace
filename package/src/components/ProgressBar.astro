@@ -1,7 +1,8 @@
 ---
 import type { SlProgressBar } from '@shoelace-style/shoelace'
+import type { HTMLAttributes } from 'astro/types';
 
-interface Props extends Omit<SlProgressBar, any>, Partial<HTMLElement> {
+interface Props extends Omit<SlProgressBar, any>, Partial<HTMLAttributes<'div'>> {
     /** The current progress as a percentage, 0 to 100. */
     value?: number;
     /** When true, percentage is ignored, the label is hidden, and the progress bar is drawn in an indeterminate state. */
