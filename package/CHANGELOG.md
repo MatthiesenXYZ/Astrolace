@@ -1,5 +1,11 @@
 # @matthiesenxyz/astrolace
 
+## 0.1.7
+
+### Patch Changes
+
+- some files did not get saved
+
 ## 0.1.6
 
 ### Patch Changes
