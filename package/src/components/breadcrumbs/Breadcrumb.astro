@@ -8,15 +8,16 @@ interface Props extends Omit<SlBreadcrumb, any>, Partial<HTMLAttributes<'div'>> 
      * screen readers and other assistive devices to provide more context for users.
      */
     label?: string;
-    separator?: string;
+    separatorName?: string;
+    separatorSrc?: string;
 }
 
-const { label, separator = "chevron-right", ...rest } = Astro.props;
+const { label, separatorName, separatorSrc, ...rest } = Astro.props;
 
 ---
 
 <sl-breadcrumb {label} {...rest}>
-    <sl-icon name={separator} slot="separator"></sl-icon>
+    <sl-icon name={separatorName} src={separatorSrc} slot="separator"></sl-icon>
     <slot />
 </sl-breadcrumb>
 

@@ -1,5 +1,11 @@
 # @matthiesenxyz/astrolace
 
+## 0.1.9
+
+### Patch Changes
+
+- fix avatar and breadcrumb icons
+
 ## 0.1.8
 
 ### Patch Changes

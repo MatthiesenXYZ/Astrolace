@@ -16,16 +16,18 @@ interface Props extends Omit<SlAvatar, any>, Partial<HTMLAttributes<'img'>> {
     /** The shape of the avatar. */
     shape?: 'circle' | 'square' | 'rounded';
     /** The icon to use when no image is available. */
-    defaultImage?: string;
+    defaultImageName?: string;
+    /** The icon to use when no image is available. */
+    defaultImageSrc?: string;
 }
 
-const { image, initials, label, loading = "eager", shape = "circle", defaultImage = "person-fill", ...rest } = Astro.props;
+const { image, initials, label, loading = "eager", shape = "circle", defaultImageName, defaultImageSrc, ...rest } = Astro.props;
 
 
 ---
 
 <sl-avatar {image} {initials} {label} {loading} {shape} {...rest}>
-    <sl-icon slot="icon" name={defaultImage}></sl-icon>
+    <sl-icon slot="icon" name={defaultImageName} src={defaultImageSrc}></sl-icon>
 </sl-avatar>
 
 <script>
