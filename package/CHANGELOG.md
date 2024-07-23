@@ -1,5 +1,11 @@
 # @matthiesenxyz/astrolace
 
+## 0.2.0
+
+### Minor Changes
+
+- Upgrade to Astro `v4.12` as minimum, and upgrade to AIK `v0.16`
+
 ## 0.1.9
 
 ### Patch Changes
