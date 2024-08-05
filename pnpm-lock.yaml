@@ -18,8 +18,8 @@ importers:
   package:
     dependencies:
       '@shoelace-style/shoelace':
-        specifier: ^2.15.1
-        version: 2.15.1(@types/react@18.3.2)
+        specifier: ^2.16.0
+        version: 2.16.0(@types/react@18.3.2)
       astro:
         specifier: '>=4.12'
         version: 4.12.2(@types/node@20.14.5)(typescript@5.5.4)
@@ -713,8 +713,8 @@ packages:
   '@shoelace-style/localize@3.1.2':
     resolution: {integrity: sha512-Hf45HeO+vdQblabpyZOTxJ4ZeZsmIUYXXPmoYrrR4OJ5OKxL+bhMz5mK8JXgl7HsoEowfz7+e248UGi861de9Q==}
 
-  '@shoelace-style/shoelace@2.15.1':
-    resolution: {integrity: sha512-3ecUw8gRwOtcZQ8kWWkjk4FTfObYQ/XIl3aRhxprESoOYV1cYhloYPsmQY38UoL3+pwJiZb5+LzX0l3u3Zl0GA==}
+  '@shoelace-style/shoelace@2.16.0':
+    resolution: {integrity: sha512-OV4XYAAZv0OfOR4RlpxCYOn7pH8ETIL8Pkh5hFvIrL+BN4/vlBLoeESYDU2tB/f9iichu4cfwdPquJITmKdY1w==}
     engines: {node: '>=14.17.0'}
 
   '@types/babel__core@7.20.5':
@@ -3287,7 +3287,7 @@ snapshots:
 
   '@shoelace-style/localize@3.1.2': {}
 
-  '@shoelace-style/shoelace@2.15.1(@types/react@18.3.2)':
+  '@shoelace-style/shoelace@2.16.0(@types/react@18.3.2)':
     dependencies:
       '@ctrl/tinycolor': 4.1.0
       '@floating-ui/dom': 1.6.5
