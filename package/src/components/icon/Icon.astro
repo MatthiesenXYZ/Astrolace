@@ -1,25 +1,25 @@
 ---
-import type { SlIcon } from '@shoelace-style/shoelace';
+import type { SlIcon } from "@shoelace-style/shoelace";
+import type { HTMLAttributes } from "astro/types";
 
-interface Props extends Omit<SlIcon, any>, Partial<HTMLElement> {
-    /** The name of the icon to draw. Available names depend on the icon library being used. */
-    name?: string;
-    /**
-     * An external URL of an SVG file. Be sure you trust the content you are including, as it will be executed as code and
-     * can result in XSS attacks.
-     */
-    src?: string;
-    /**
-     * An alternate description to use for assistive devices. If omitted, the icon will be considered presentational and
-     * ignored by assistive devices.
-     */
-    label?: string;
-    /** The name of a registered custom icon library. */
-    library?: string;
+interface Props extends Omit<SlIcon, any>, Partial<HTMLAttributes<"i">> {
+	/** The name of the icon to draw. Available names depend on the icon library being used. */
+	name?: string;
+	/**
+	 * An external URL of an SVG file. Be sure you trust the content you are including, as it will be executed as code and
+	 * can result in XSS attacks.
+	 */
+	src?: string;
+	/**
+	 * An alternate description to use for assistive devices. If omitted, the icon will be considered presentational and
+	 * ignored by assistive devices.
+	 */
+	label?: string;
+	/** The name of a registered custom icon library. */
+	library?: string;
 }
 
 const { name, src, label, library, ...rest } = Astro.props;
-
 ---
 
 <sl-icon 

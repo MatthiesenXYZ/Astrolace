@@ -25,16 +25,14 @@
 		"./dark.css": "./src/shoelaceLib/dark.css",
 		"./base.css": "./src/shoelaceLib/base.css"
 	},
-	"files": [
-		"src"
-	],
+	"files": ["src"],
 	"type": "module",
 	"peerDependencies": {
-		"astro": ">=4.12"
+		"astro": ">=4.14"
 	},
 	"dependencies": {
 		"astro-integration-kit": "^0.16.0",
-		"@shoelace-style/shoelace": "^2.15.1",
+		"@shoelace-style/shoelace": "^2.16.0",
 		"lit": "^3.1.4",
 		"zod": "^3.23.8"
 	},
