@@ -1,5 +1,11 @@
 # @matthiesenxyz/astrolace
 
+## 0.3.0
+
+### Minor Changes
+
+- ed8b00c: Upgrade Astro dep to minimum of 4.14 for new injectTypes function
+
 ## 0.2.0
 
 ### Minor Changes
