@@ -1,25 +1,25 @@
 ---
-import type { SlDialog } from '@shoelace-style/shoelace';
+import type { SlDialog } from "@shoelace-style/shoelace";
+import type { HTMLAttributes } from "astro/types";
 
-
-interface Props extends Omit<SlDialog, any> {
-    /** used to help select this element from a script tag for popping up the dialog */
-    id?: string;
-    /**
-     * Indicates whether or not the dialog is open. You can toggle this attribute to show and hide the dialog, or you can
-     * use the `show()` and `hide()` methods and this attribute will reflect the dialog's open state.
-     */
-    open?: boolean;
-    /**
-     * The dialog's label as displayed in the header. You should always include a relevant label even when using
-     * `no-header`, as it is required for proper accessibility. If you need to display HTML, use the `label` slot instead.
-     */
-    label?: string;
-    /**
-     * Disables the header. This will also remove the default close button, so please ensure you provide an easy,
-     * accessible way for users to dismiss the dialog.
-     */
-    noHeader?: boolean;
+interface Props extends Omit<SlDialog, any>, Partial<HTMLAttributes<"div">> {
+	/** used to help select this element from a script tag for popping up the dialog */
+	id?: string;
+	/**
+	 * Indicates whether or not the dialog is open. You can toggle this attribute to show and hide the dialog, or you can
+	 * use the `show()` and `hide()` methods and this attribute will reflect the dialog's open state.
+	 */
+	open?: boolean;
+	/**
+	 * The dialog's label as displayed in the header. You should always include a relevant label even when using
+	 * `no-header`, as it is required for proper accessibility. If you need to display HTML, use the `label` slot instead.
+	 */
+	label?: string;
+	/**
+	 * Disables the header. This will also remove the default close button, so please ensure you provide an easy,
+	 * accessible way for users to dismiss the dialog.
+	 */
+	noHeader?: boolean;
 }
 
 const { id, open, label, noHeader, ...rest } = Astro.props;

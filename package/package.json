@@ -22,12 +22,12 @@
 	"sideEffects": false,
 	"exports": {
 		".": "./src/index.ts",
+		"./components": "./src/components/index.ts",
+		"./components/*": "./src/components/*",
 		"./dark.css": "./src/shoelaceLib/dark.css",
 		"./base.css": "./src/shoelaceLib/base.css"
 	},
-	"files": [
-		"src"
-	],
+	"files": ["src"],
 	"type": "module",
 	"peerDependencies": {
 		"astro": ">=4.14"
