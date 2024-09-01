@@ -1,6 +1,6 @@
 {
 	"name": "@matthiesenxyz/astrolace",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "An easy way to use Shoelace.style within your Astro Project!",
 	"author": {
 		"email": "adam@matthiesen.xyz",
@@ -27,7 +27,9 @@
 		"./dark.css": "./src/shoelaceLib/dark.css",
 		"./base.css": "./src/shoelaceLib/base.css"
 	},
-	"files": ["src"],
+	"files": [
+		"src"
+	],
 	"type": "module",
 	"peerDependencies": {
 		"astro": ">=4.14"

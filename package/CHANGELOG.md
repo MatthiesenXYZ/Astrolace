@@ -1,5 +1,11 @@
 # @matthiesenxyz/astrolace
 
+## 0.3.1
+
+### Patch Changes
+
+- 7c8e6fe: fix. update props interface on 3 components and update exports
+
 ## 0.3.0
 
 ### Minor Changes
