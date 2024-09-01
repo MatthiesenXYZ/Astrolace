@@ -1,6 +1,6 @@
 {
 	"name": "@matthiesenxyz/astrolace",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"description": "An easy way to use Shoelace.style within your Astro Project!",
 	"author": {
 		"email": "adam@matthiesen.xyz",
@@ -24,6 +24,7 @@
 		".": "./src/index.ts",
 		"./components": "./src/components/index.ts",
 		"./components/*": "./src/components/*",
+		"./types": "./src/types/index.ts",
 		"./dark.css": "./src/shoelaceLib/dark.css",
 		"./base.css": "./src/shoelaceLib/base.css"
 	},

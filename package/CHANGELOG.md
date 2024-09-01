@@ -1,5 +1,11 @@
 # @matthiesenxyz/astrolace
 
+## 0.3.2
+
+### Patch Changes
+
+- add a types export
+
 ## 0.3.1
 
 ### Patch Changes
